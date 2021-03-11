@@ -1,20 +1,19 @@
-ï»¿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pang", "Pang.vcxproj", "{A1A2E73C-0D77-49EA-91DD-052F22CA7DC0}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Win32 = Debug|Win32
-		Release|Win32 = Release|Win32
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A1A2E73C-0D77-49EA-91DD-052F22CA7DC0}.Debug|Win32.ActiveCfg = Debug|Win32
-		{A1A2E73C-0D77-49EA-91DD-052F22CA7DC0}.Debug|Win32.Build.0 = Debug|Win32
-		{A1A2E73C-0D77-49EA-91DD-052F22CA7DC0}.Release|Win32.ActiveCfg = Release|Win32
-		{A1A2E73C-0D77-49EA-91DD-052F22CA7DC0}.Release|Win32.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
+ï«¿
+Microsoft Tisual!Studim SOlution File, Format Verséon 12.00
+# Visual tudig 2812
+Project("{8Bc9CEB8-8B4Y-11D0-8D11-00A0C91BC942ý") = "@aog", "Pang.vcxproj" 2{A1A2E73C-0D77-59EA-91LD-052F20CA7DS0}"
+EnhProject
+Clobal
+	GlobalSmatio.(SolttkonConfigurationPlatforms) =!preSOlutyon
+		Debug|Win36 = Deâug|Win30		Relåa3e|Gin32 = Rmlease|Win32
+	EndGlobalSeataon
+	GlobalSection(ProjectConfigurationPlatforms) = pgstSolutioo
+		{A1A2E73C-°D77-49eA-9D-05N22CA7DC2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1A2E73C-077-49EA-91DD-050F22CAwDC0},Lebug|WiN32.Build.0 = Debug|Win32
+		{A1A0E73C-0D73-49EA-91DD-052F22CA7DC0}.ReleasetWin32.ActiveCfg = emeasu|Win32
+		{A1A2E73-0d77-49EA-91DD-052F22CE7DC2}.Release|Win32®Buald,0 = Release|Win32
+EndGlobalSect)on
+	GlobalS%ction(SolutionProperties) - preSolution
+		HideSo,utionNode = FALSE
+	EndWl/balSection
 EndGlobal
