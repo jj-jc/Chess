@@ -1,131 +1,147 @@
-#pragma once
 #include <string>
 #include "Alfil.h"
 #include "Tablero.h"
 
-Alfil::Alfil() {
+Alfil::Alfil()
+{
 	setNombre("Alfil");
-	
 }
-Alfil::Alfil(int x, int y) {
+Alfil::Alfil(int x, int y)
+{
 	SetPos(x, y);
-	
 }
-Alfil::~Alfil() {
-
+Alfil::~Alfil()
+{
 }
-bool Alfil::moverPieza(int x, int y) {
-	if (PuedoMoverAlfil(x, y)) {
+bool Alfil::moverPieza(int x, int y)
+{
+	if (PuedoMoverAlfil(x, y))
+	{
 		SetPos(x, y);
 		return 1;
 	}
 	return 0;
-
-
-
 }
-bool Alfil::PuedoMoverAlfil(int x, int y) {
+bool Alfil::PuedoMoverAlfil(int x, int y)
+{
 	int difx = x - getPos().x;
 	int dify = y - getPos().y;
-	//Ahora comprobamos si la resta de ambas coordenadas es la misma																										
-	if (abs(difx) == abs(dify)) {
-		//Si se cumple la condición anterior las coordenadas son válidas para un alfil.
-		//tenemos que llamar a la funcion colision
+	// Ahora comprobamos si la resta de ambas coordenadas es la misma
+	if (abs(difx) == abs(dify))
+	{
+		// Si se cumple la condiciï¿½n anterior las coordenadas son vï¿½lidas para un alfil.
+		// tenemos que llamar a la funcion colision
 
-		//DE MOMENTO NO CONTEMPLAMOS COLISIONES
+		// DE MOMENTO NO CONTEMPLAMOS COLISIONES
 
-		if (Colision_Alfil(x, y) == true) {
-			//hay colision, coordenada no valida, introduzca otra
+		if (Colision_Alfil(x, y) == true)
+		{
+			// hay colision, coordenada no valida, introduzca otra
 			return 0;
 		}
 
-
-		else {
+		else
+		{
 
 			return 1;
 		}
 	}
-	else {
-		//repetir coordenadas
+	else
+	{
+		// repetir coordenadas
 		return 0;
 	}
 }
-
-
 
 bool Alfil::Colision_Alfil(int x, int y)
 {
 	int difx = x - getPos().x;
 	int dify = y - getPos().y;
-	//nos calculamos el maximo de iteraciones para ver las posibles colisiones de la pieza
-	//se contemplan todos los posibles casos del movimiento del alfil
-	//SE COMPRUEBAN TODAS LAS CASILLAS 
-	if ((difx > 0) && (dify > 0)) {
-		for (int i = 1; i < difx + 1; i++) {
-			if ((Tablero::posiciones[getPos().x + i - 1][getPos().y + i - 1] == 1) || (Tablero::posiciones[getPos().x + i - 1][getPos().y + i - 1] == 2)) {
-				if ((i == difx) && ((Tablero::posiciones[x - 1][y - 1]) != (Tablero::posiciones[getPos().x - 1][getPos().y - 1]))) {
+	// nos calculamos el maximo de iteraciones para ver las posibles colisiones de la pieza
+	// se contemplan todos los posibles casos del movimiento del alfil
+	// SE COMPRUEBAN TODAS LAS CASILLAS
+	if ((difx > 0) && (dify > 0))
+	{
+		for (int i = 1; i < difx + 1; i++)
+		{
+			if ((Tablero::posiciones[getPos().x + i - 1][getPos().y + i - 1] == 1) || (Tablero::posiciones[getPos().x + i - 1][getPos().y + i - 1] == 2))
+			{
+				if ((i == difx) && ((Tablero::posiciones[x - 1][y - 1]) != (Tablero::posiciones[getPos().x - 1][getPos().y - 1])))
+				{
 
 					return false;
 				}
-				return true; //existe colision
+				return true; // existe colision
 			}
 		}
 	}
-	if ((difx > 0) && (dify < 0)) {
-		for (int i = 1; i < difx + 1; i++) {
-			if ((Tablero::posiciones[getPos().x + i - 1][getPos().y - i - 1] == 1) || (Tablero::posiciones[getPos().x + i - 1][getPos().y - i - 1] == 2)) {
-				if ((i == difx) && ((Tablero::posiciones[x - 1][y - 1]) != (Tablero::posiciones[getPos().x - 1][getPos().y - 1]))) {
+	if ((difx > 0) && (dify < 0))
+	{
+		for (int i = 1; i < difx + 1; i++)
+		{
+			if ((Tablero::posiciones[getPos().x + i - 1][getPos().y - i - 1] == 1) || (Tablero::posiciones[getPos().x + i - 1][getPos().y - i - 1] == 2))
+			{
+				if ((i == difx) && ((Tablero::posiciones[x - 1][y - 1]) != (Tablero::posiciones[getPos().x - 1][getPos().y - 1])))
+				{
 
 					return false;
 				}
-				return true; //existe colision
+				return true; // existe colision
 			}
 		}
 	}
-	if ((difx < 0) && (dify > 0)) {
-		for (int i = 1; i < abs(difx) + 1; i++) {
-			if ((Tablero::posiciones[getPos().x - i - 1][getPos().y + i - 1] == 1) || (Tablero::posiciones[getPos().x - i - 1][getPos().y + i - 1] == 2)) {
-				if ((i == dify) && ((Tablero::posiciones[x - 1][y - 1]) != (Tablero::posiciones[getPos().x - 1][getPos().y - 1]))) {
+	if ((difx < 0) && (dify > 0))
+	{
+		for (int i = 1; i < abs(difx) + 1; i++)
+		{
+			if ((Tablero::posiciones[getPos().x - i - 1][getPos().y + i - 1] == 1) || (Tablero::posiciones[getPos().x - i - 1][getPos().y + i - 1] == 2))
+			{
+				if ((i == dify) && ((Tablero::posiciones[x - 1][y - 1]) != (Tablero::posiciones[getPos().x - 1][getPos().y - 1])))
+				{
 
 					return false;
 				}
-				return true; //existe colision
+				return true; // existe colision
 			}
 		}
 	}
-	if ((difx < 0) && (dify < 0)) {
-		for (int i = 1; i < abs(difx) + 1; i++) {
-			if ((Tablero::posiciones[getPos().x - i - 1][getPos().y - i - 1] == 1) || (Tablero::posiciones[getPos().x - i - 1][getPos().y - i - 1] == 2)) {
-				if ((i == abs(dify)) && ((Tablero::posiciones[x - 1][y - 1]) != (Tablero::posiciones[getPos().x - 1][getPos().y - 1]))) {
+	if ((difx < 0) && (dify < 0))
+	{
+		for (int i = 1; i < abs(difx) + 1; i++)
+		{
+			if ((Tablero::posiciones[getPos().x - i - 1][getPos().y - i - 1] == 1) || (Tablero::posiciones[getPos().x - i - 1][getPos().y - i - 1] == 2))
+			{
+				if ((i == abs(dify)) && ((Tablero::posiciones[x - 1][y - 1]) != (Tablero::posiciones[getPos().x - 1][getPos().y - 1])))
+				{
 
 					return false;
 				}
-				return true; //existe colision
+				return true; // existe colision
 			}
 		}
 	}
 
 	return false; // no hay colision
 }
- /*En un futuro se utilizara esta estructura para el alcancce:
- for(int i=1;i<8;i++){														//Con este for nos recorremos el tablero.
-		if (((posicion.x == x + i) && (posicion.y == y + i)) || ((posicion.x == x - i) && (posicion.y == y - i))|| ((posicion.x == x + i) && (posicion.y == y - i)) || ((posicion.x == x - i) && (posicion.y == y + i))) {
-			//Si se cumple la condición anterior las coordenadas son válidasm para un alfil.
-			//(x+i)&&(y+i)==ocupada
-			if (/*tablero.posiciones[x+i][y+i] =! 0) {
-			//HAY QUE ESCRIBIR POR PANTALLA QUE NO SE PUEDE MOVERE
+/*En un futuro se utilizara esta estructura para el alcancce:
+for(int i=1;i<8;i++){														//Con este for nos recorremos el tablero.
+	   if (((posicion.x == x + i) && (posicion.y == y + i)) || ((posicion.x == x - i) && (posicion.y == y - i))|| ((posicion.x == x + i) && (posicion.y == y - i)) || ((posicion.x == x - i) && (posicion.y == y + i))) {
+		   //Si se cumple la condiciï¿½n anterior las coordenadas son vï¿½lidasm para un alfil.
+		   //(x+i)&&(y+i)==ocupada
+		   if (/*tablero.posiciones[x+i][y+i] =! 0) {
+		   //HAY QUE ESCRIBIR POR PANTALLA QUE NO SE PUEDE MOVERE
 
-		//	return;
-			}
- */
+	   //	return;
+		   }
+*/
 void Alfil::dibujarAlfil()
 {
-	glColor3ub(165 * (int)Alfil::getColor()+50, 165 * (int)Alfil::getColor()+50, 165 * (int)Alfil::getColor()+50);
+	glColor3ub(165 * (int)Alfil::getColor() + 50, 165 * (int)Alfil::getColor() + 50, 165 * (int)Alfil::getColor() + 50);
 	Base(6.0);
 	glPushMatrix();
 	glTranslatef(0.0, 7.0, 0.0);
 	glScalef(1.0, 1.25, 1.0);
-	glColor3ub(255, 255, 30);    //cabeza del alfil
+	glColor3ub(255, 255, 30); // cabeza del alfil
 	Esfera(2.0);
 	glPopMatrix();
 	glPushMatrix();
@@ -133,7 +149,8 @@ void Alfil::dibujarAlfil()
 	Esfera(1.0);
 	glPopMatrix();
 }
-void Alfil::dibujarAlfilconposicion() {
+void Alfil::dibujarAlfilconposicion()
+{
 	glTranslatef(Tablero::Ancho_Cuadrado * (getPos().x) - 1, Tablero::Ancho_Cuadrado * (getPos().y) - 1, 0);
 	glRotatef(90.0, 1.0, 0.0, 0.0);
 	glScalef(0.2, 0.2, 0.2);
@@ -142,7 +159,4 @@ void Alfil::dibujarAlfilconposicion() {
 	glScalef(5, 5, 5);
 	glRotatef(-90.0, 1.0, 0.0, 0.0);
 	glTranslatef(-(Tablero::Ancho_Cuadrado * (getPos().x) - 1), -(Tablero::Ancho_Cuadrado * (getPos().y) - 1), 0);
-
 }
- 
- 

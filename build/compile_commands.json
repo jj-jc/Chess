@@ -1,0 +1,86 @@
+[
+{
+  "directory": "/home/yoyosplay/Dev/Chess/build",
+  "command": "/usr/bin/c++  -I/home/yoyosplay/Dev/Chess/src -I/home/yoyosplay/Dev/Chess/lib -g -std=gnu++17 -o CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.o -c /home/yoyosplay/Dev/Chess/src/Ajedrez.cpp",
+  "file": "/home/yoyosplay/Dev/Chess/src/Ajedrez.cpp",
+  "output": "CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.o"
+},
+{
+  "directory": "/home/yoyosplay/Dev/Chess/build",
+  "command": "/usr/bin/c++  -I/home/yoyosplay/Dev/Chess/src -I/home/yoyosplay/Dev/Chess/lib -g -std=gnu++17 -o CMakeFiles/ChessGame.dir/src/Alfil.cpp.o -c /home/yoyosplay/Dev/Chess/src/Alfil.cpp",
+  "file": "/home/yoyosplay/Dev/Chess/src/Alfil.cpp",
+  "output": "CMakeFiles/ChessGame.dir/src/Alfil.cpp.o"
+},
+{
+  "directory": "/home/yoyosplay/Dev/Chess/build",
+  "command": "/usr/bin/c++  -I/home/yoyosplay/Dev/Chess/src -I/home/yoyosplay/Dev/Chess/lib -g -std=gnu++17 -o CMakeFiles/ChessGame.dir/src/Caballo.cpp.o -c /home/yoyosplay/Dev/Chess/src/Caballo.cpp",
+  "file": "/home/yoyosplay/Dev/Chess/src/Caballo.cpp",
+  "output": "CMakeFiles/ChessGame.dir/src/Caballo.cpp.o"
+},
+{
+  "directory": "/home/yoyosplay/Dev/Chess/build",
+  "command": "/usr/bin/c++  -I/home/yoyosplay/Dev/Chess/src -I/home/yoyosplay/Dev/Chess/lib -g -std=gnu++17 -o CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.o -c /home/yoyosplay/Dev/Chess/src/CoordinadorAjedrez.cpp",
+  "file": "/home/yoyosplay/Dev/Chess/src/CoordinadorAjedrez.cpp",
+  "output": "CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.o"
+},
+{
+  "directory": "/home/yoyosplay/Dev/Chess/build",
+  "command": "/usr/bin/c++  -I/home/yoyosplay/Dev/Chess/src -I/home/yoyosplay/Dev/Chess/lib -g -std=gnu++17 -o CMakeFiles/ChessGame.dir/src/Dama.cpp.o -c /home/yoyosplay/Dev/Chess/src/Dama.cpp",
+  "file": "/home/yoyosplay/Dev/Chess/src/Dama.cpp",
+  "output": "CMakeFiles/ChessGame.dir/src/Dama.cpp.o"
+},
+{
+  "directory": "/home/yoyosplay/Dev/Chess/build",
+  "command": "/usr/bin/c++  -I/home/yoyosplay/Dev/Chess/src -I/home/yoyosplay/Dev/Chess/lib -g -std=gnu++17 -o CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.o -c /home/yoyosplay/Dev/Chess/src/ListaTransformaciones.cpp",
+  "file": "/home/yoyosplay/Dev/Chess/src/ListaTransformaciones.cpp",
+  "output": "CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.o"
+},
+{
+  "directory": "/home/yoyosplay/Dev/Chess/build",
+  "command": "/usr/bin/c++  -I/home/yoyosplay/Dev/Chess/src -I/home/yoyosplay/Dev/Chess/lib -g -std=gnu++17 -o CMakeFiles/ChessGame.dir/src/Mundo.cpp.o -c /home/yoyosplay/Dev/Chess/src/Mundo.cpp",
+  "file": "/home/yoyosplay/Dev/Chess/src/Mundo.cpp",
+  "output": "CMakeFiles/ChessGame.dir/src/Mundo.cpp.o"
+},
+{
+  "directory": "/home/yoyosplay/Dev/Chess/build",
+  "command": "/usr/bin/c++  -I/home/yoyosplay/Dev/Chess/src -I/home/yoyosplay/Dev/Chess/lib -g -std=gnu++17 -o CMakeFiles/ChessGame.dir/src/OpenGL.cpp.o -c /home/yoyosplay/Dev/Chess/src/OpenGL.cpp",
+  "file": "/home/yoyosplay/Dev/Chess/src/OpenGL.cpp",
+  "output": "CMakeFiles/ChessGame.dir/src/OpenGL.cpp.o"
+},
+{
+  "directory": "/home/yoyosplay/Dev/Chess/build",
+  "command": "/usr/bin/c++  -I/home/yoyosplay/Dev/Chess/src -I/home/yoyosplay/Dev/Chess/lib -g -std=gnu++17 -o CMakeFiles/ChessGame.dir/src/Peon.cpp.o -c /home/yoyosplay/Dev/Chess/src/Peon.cpp",
+  "file": "/home/yoyosplay/Dev/Chess/src/Peon.cpp",
+  "output": "CMakeFiles/ChessGame.dir/src/Peon.cpp.o"
+},
+{
+  "directory": "/home/yoyosplay/Dev/Chess/build",
+  "command": "/usr/bin/c++  -I/home/yoyosplay/Dev/Chess/src -I/home/yoyosplay/Dev/Chess/lib -g -std=gnu++17 -o CMakeFiles/ChessGame.dir/src/Pieza.cpp.o -c /home/yoyosplay/Dev/Chess/src/Pieza.cpp",
+  "file": "/home/yoyosplay/Dev/Chess/src/Pieza.cpp",
+  "output": "CMakeFiles/ChessGame.dir/src/Pieza.cpp.o"
+},
+{
+  "directory": "/home/yoyosplay/Dev/Chess/build",
+  "command": "/usr/bin/c++  -I/home/yoyosplay/Dev/Chess/src -I/home/yoyosplay/Dev/Chess/lib -g -std=gnu++17 -o CMakeFiles/ChessGame.dir/src/Rey.cpp.o -c /home/yoyosplay/Dev/Chess/src/Rey.cpp",
+  "file": "/home/yoyosplay/Dev/Chess/src/Rey.cpp",
+  "output": "CMakeFiles/ChessGame.dir/src/Rey.cpp.o"
+},
+{
+  "directory": "/home/yoyosplay/Dev/Chess/build",
+  "command": "/usr/bin/c++  -I/home/yoyosplay/Dev/Chess/src -I/home/yoyosplay/Dev/Chess/lib -g -std=gnu++17 -o CMakeFiles/ChessGame.dir/src/Tablero.cpp.o -c /home/yoyosplay/Dev/Chess/src/Tablero.cpp",
+  "file": "/home/yoyosplay/Dev/Chess/src/Tablero.cpp",
+  "output": "CMakeFiles/ChessGame.dir/src/Tablero.cpp.o"
+},
+{
+  "directory": "/home/yoyosplay/Dev/Chess/build",
+  "command": "/usr/bin/c++  -I/home/yoyosplay/Dev/Chess/src -I/home/yoyosplay/Dev/Chess/lib -g -std=gnu++17 -o CMakeFiles/ChessGame.dir/src/Torre.cpp.o -c /home/yoyosplay/Dev/Chess/src/Torre.cpp",
+  "file": "/home/yoyosplay/Dev/Chess/src/Torre.cpp",
+  "output": "CMakeFiles/ChessGame.dir/src/Torre.cpp.o"
+},
+{
+  "directory": "/home/yoyosplay/Dev/Chess/build",
+  "command": "/usr/bin/c++  -I/home/yoyosplay/Dev/Chess/src -I/home/yoyosplay/Dev/Chess/lib -g -std=gnu++17 -o CMakeFiles/ChessGame.dir/src/Vector.cpp.o -c /home/yoyosplay/Dev/Chess/src/Vector.cpp",
+  "file": "/home/yoyosplay/Dev/Chess/src/Vector.cpp",
+  "output": "CMakeFiles/ChessGame.dir/src/Vector.cpp.o"
+}
+]
