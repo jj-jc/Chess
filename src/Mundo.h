@@ -45,7 +45,6 @@ public:
 	ListaTransformaciones transfor;
 
 	// Mouse interaction state
-	int pulsaciones = 0;
 	Vector piezaAux;
 	bool seleccionValida = false;
 
@@ -58,16 +57,36 @@ public:
 	int selX = 0, selY = 0;
 	bool haySeleccion = false;
 
+	// Captured pieces
+	char capturadasBlancas[16][16];
+	int numCapturadasBlancas = 0;
+	char capturadasNegras[16][16];
+	int numCapturadasNegras = 0;
+
+	// Pawn promotion
+	bool promocionPendiente = false;
+	int promocionX = 0, promocionY = 0;
+	bool promocionColor = 0;
+
+	// Game state
+	bool juegoTerminado = false;
+	char mensajeFin[64];
+
 	static int vista;
 	bool Enroque(int x, int y);
 	bool Transformacion();
 	void Tecla(unsigned char key);
 	void procesarTecla(unsigned char key);
 	void Inicializa();
+	void initCapturadas();
+	void reiniciar();
 	
 	void Dibuja();
 	void dibujarSeleccion();
 	void dibujarTurnoInfo();
+	void dibujarCapturadas();
+	void dibujarEstado();
+	void dibujarPromocion();
 	inline void MenuB();
 	inline void MenuN();
 	bool JaqueN();
@@ -76,9 +95,10 @@ public:
 	Vector PedirPieza(int x, int y);
 	void MoverPieza(Vector, int x, int y);
 	void ejecutarMovimiento(int srcX, int srcY, int dstX, int dstY);
+	void registrarCaptura(int x, int y);
+	void comprobarPromocion();
+	void ejecutarPromocion(char tipo);
 	void toggleTurno();
 	
 };
-
-
 

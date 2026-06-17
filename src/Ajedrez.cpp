@@ -46,19 +46,11 @@ void ControlRaton(int button, int state, int x, int y)
 {
 	if ((button == GLUT_LEFT_BUTTON) && (state == GLUT_DOWN))
 	{
-		if (coordinador.mundo.pulsaciones % 2 == 1)
-		{
+		if (coordinador.mundo.haySeleccion)
 			coordinador.mundo.MoverPieza(coordinador.mundo.piezaAux, x, y);
-		}
 		else
-		{
 			coordinador.mundo.piezaAux = coordinador.mundo.PedirPieza(x, y);
-			if (coordinador.mundo.seleccionValida)
-				coordinador.mundo.pulsaciones++;
-		}
 	}
-
-	glutMouseFunc(ControlRaton);
 }
 
 void OnDraw(void)
