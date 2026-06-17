@@ -44,17 +44,30 @@ public:
 
 	ListaTransformaciones transfor;
 
-
+	// Mouse interaction state
 	int pulsaciones = 0;
+	Vector piezaAux;
+	bool seleccionValida = false;
+
+	// Keyboard input state
+	int entrada[4] = {0,0,0,0};
+	int numEntrada = 0;
+	bool modoEntrada = false;
+
+	// Visual feedback
+	int selX = 0, selY = 0;
+	bool haySeleccion = false;
+
 	static int vista;
-	//void Menu();
 	bool Enroque(int x, int y);
 	bool Transformacion();
 	void Tecla(unsigned char key);
+	void procesarTecla(unsigned char key);
 	void Inicializa();
-	//void RotarOjo();
 	
 	void Dibuja();
+	void dibujarSeleccion();
+	void dibujarTurnoInfo();
 	inline void MenuB();
 	inline void MenuN();
 	bool JaqueN();
@@ -62,6 +75,8 @@ public:
 	Vector convertirpixelscoordenadas(int xpixel, int ypixel);
 	Vector PedirPieza(int x, int y);
 	void MoverPieza(Vector, int x, int y);
+	void ejecutarMovimiento(int srcX, int srcY, int dstX, int dstY);
+	void toggleTurno();
 	
 };
 

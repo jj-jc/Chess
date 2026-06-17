@@ -129,7 +129,6 @@ void CoordinadorAjedrez::tecla(unsigned char key)
 		}
 		else {
 			mundo.Tecla(key);
-			mundo.Dibuja();
 		}
 		
 	}

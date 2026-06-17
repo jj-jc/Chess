@@ -2,7 +2,7 @@
 
 #include "Vector.h"
 #include "Pieza.h"
-#include "Math.h"
+#include <cmath>
 
 
 class Caballo:public Pieza {

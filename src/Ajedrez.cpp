@@ -7,28 +7,23 @@
 #include "CoordinadorAjedrez.h"
 
 using namespace std;
-Vector Aux;
 CoordinadorAjedrez coordinador;
 
-// los callback, funciones que seran llamadas automaticamente por la glut
-// cuando sucedan eventos
-// NO HACE FALTA LLAMARLAS EXPLICITAMENTE
-void OnDraw(void);										// esta funcion sera llamada para dibujar
-void OnTimer(int value);								// esta funcion sera llamada cuando transcurra una temporizacion
-void OnKeyboardDown(unsigned char key, int x, int y);	// cuando se pulse una tecla
-void ControlRaton(int button, int state, int x, int y); // cuando se pulse el raton
+GLdouble g_modelview[16], g_projection[16];
+GLint g_viewport[4];
+
+void OnDraw(void);
+void OnTimer(int value);
+void OnKeyboardDown(unsigned char key, int x, int y);
+void ControlRaton(int button, int state, int x, int y);
 int main(int argc, char *argv[])
 {
-
-	// Inicializar el gestor de ventanas GLUT
-	// y crear la ventana
 
 	glutInit(&argc, argv);
 	glutInitWindowSize(1400, 1000);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	glutCreateWindow("Ajedrez");
 
-	// habilitar luces y definir perspectiva
 	glEnable(GL_LIGHT0);
 	glEnable(GL_LIGHTING);
 	glEnable(GL_DEPTH_TEST);
@@ -36,38 +31,31 @@ int main(int argc, char *argv[])
 	glMatrixMode(GL_PROJECTION);
 	gluPerspective(40.0, 800 / 600.0f, 0.1, 150);
 
-	// Registrar los callbacks
 	glutDisplayFunc(OnDraw);
-	glutTimerFunc(25, OnTimer, 0); // le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
+	glutTimerFunc(25, OnTimer, 0);
 	glutKeyboardFunc(OnKeyboardDown);
 	glutMouseFunc(ControlRaton);
 
 	coordinador.mundo.Inicializa();
 
-	// pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();
 
 	return 0;
 }
 void ControlRaton(int button, int state, int x, int y)
 {
-
 	if ((button == GLUT_LEFT_BUTTON) && (state == GLUT_DOWN))
 	{
 		if (coordinador.mundo.pulsaciones % 2 == 1)
 		{
-
-			coordinador.mundo.MoverPieza(Aux, x, y);
+			coordinador.mundo.MoverPieza(coordinador.mundo.piezaAux, x, y);
 		}
 		else
 		{
-
-			printf("HOLA");
-			Aux = coordinador.mundo.PedirPieza(x, y);
-
-			cout << Aux.x << Aux.y;
+			coordinador.mundo.piezaAux = coordinador.mundo.PedirPieza(x, y);
+			if (coordinador.mundo.seleccionValida)
+				coordinador.mundo.pulsaciones++;
 		}
-		coordinador.mundo.pulsaciones++;
 	}
 
 	glutMouseFunc(ControlRaton);
@@ -75,31 +63,27 @@ void ControlRaton(int button, int state, int x, int y)
 
 void OnDraw(void)
 {
-	// Borrado de la pantalla
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	// Para definir el punto de vista
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
 	coordinador.dibuja();
 
-	// no borrar esta linea ni poner nada despues
+	glGetDoublev(GL_MODELVIEW_MATRIX, g_modelview);
+	glGetDoublev(GL_PROJECTION_MATRIX, g_projection);
+	glGetIntegerv(GL_VIEWPORT, g_viewport);
+
 	glutSwapBuffers();
 }
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
-	// poner aqui el c�digo de teclado
-	// mundo.Tecla(key);
 	coordinador.tecla(key);
 	glutPostRedisplay();
 }
 
 void OnTimer(int value)
 {
-	// poner aqui el c�digo de animacion
-
-	// no borrar estas lineas
 	glutTimerFunc(25, OnTimer, 0);
 	glutPostRedisplay();
 }

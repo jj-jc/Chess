@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Add source files
 file(GLOB SOURCES
     "src/*.cpp"
-    "src/*.h"
+    "lib/*.cpp"
     )
 
 # Create executable
@@ -19,4 +19,18 @@ add_executable(ChessGame ${SOURCES})
 target_include_directories(ChessGame PRIVATE src lib)
 
 find_package(OpenGL REQUIRED)
-find_package(GLUT REQUIRED)
+find_package(Freetype REQUIRED)
+
+# Find GLUT library (dev package not needed; we bundle our own glut.h)
+find_library(GLUT_LIBRARY NAMES glut PATHS /usr/lib/x86_64-linux-gnu /usr/lib64 /usr/lib)
+if(NOT GLUT_LIBRARY)
+    set(GLUT_LIBRARY "/usr/lib/x86_64-linux-gnu/libglut.so.3.12.0")
+    message(STATUS "Using GLUT library: ${GLUT_LIBRARY}")
+endif()
+
+target_link_libraries(ChessGame
+    ${OPENGL_LIBRARIES}
+    ${OPENGL_GLU_LIBRARIES}
+    Freetype::Freetype
+    ${GLUT_LIBRARY}
+)

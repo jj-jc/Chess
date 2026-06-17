@@ -22,10 +22,9 @@ void Mundo::Dibuja()
 			  8.0, 8.0, 0.0,	// hacia que punto mira  (0,0,0)
 			  0.0, 1.0, 0.0);	// definimos hacia arriba (eje Y)
 
-	// aqui es donde hay que poner el codigo de dibujo
-	// dibujo del suelo
 	glDisable(GL_LIGHTING);
 	tablero.dibujarTablero();
+	dibujarSeleccion();
 	alfilB1.dibujarAlfilconposicion(), alfilB2.dibujarAlfilconposicion();
 	caballoB1.dibujarCaballoconposicion(), caballoB2.dibujarCaballoconposicion();
 	damaB.dibujarDamaconposicion();
@@ -47,7 +46,7 @@ void Mundo::Dibuja()
 	glBegin(GL_POLYGON);
 	glColor3f(1, 1, 1);
 	glTexCoord2d(0, 1);
-	glVertex3f(-30, 0, -0.1); //
+	glVertex3f(-30, 0, -0.1);
 	glTexCoord2d(1, 1);
 	glVertex3f(30, 0, -0.1);
 	glTexCoord2d(1, 0);
@@ -58,6 +57,8 @@ void Mundo::Dibuja()
 	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);
 	glTranslatef(-a, -b, -c);
+
+	dibujarTurnoInfo();
 
 	glTranslatef(-1.2, 0.5, 0.0);
 	ETSIDI::setTextColor(200, 200, 200);
@@ -191,6 +192,7 @@ bool Mundo::Enroque(int x, int y)
 			{
 				torreN1.SetPos(4, 8);
 				reyN.SetPos(3, 8);
+				return 1;
 			}
 		}
 		if (torreN2.enroque == 0)
@@ -199,9 +201,11 @@ bool Mundo::Enroque(int x, int y)
 			{
 				torreN2.SetPos(6, 8);
 				reyN.SetPos(7, 8);
+				return 1;
 			}
 		}
 	}
+	return 0;
 }
 bool Mundo::Transformacion()
 {
@@ -237,180 +241,65 @@ bool Mundo::Transformacion()
 }
 void Mundo::Tecla(unsigned char key)
 {
-	if (CoordinadorAjedrez::quien == 1)
+	modoEntrada = true;
+	procesarTecla(key);
+}
+void Mundo::procesarTecla(unsigned char key)
+{
+	if (key == 27)
 	{
-		MenuB();
-		CoordinadorAjedrez::quien = 0;
+		modoEntrada = false;
+		numEntrada = 0;
+		return;
 	}
-	else if (CoordinadorAjedrez::quien == 0)
+	if (key == 8 || key == 127)
 	{
-		MenuN();
-		CoordinadorAjedrez::quien = 1;
+		if (numEntrada > 0) numEntrada--;
+		return;
+	}
+
+	bool esColumna = (numEntrada % 2 == 0);
+	int val = -1;
+
+	if (key >= 'a' && key <= 'h') val = key - 'a' + 1;
+	else if (key >= 'A' && key <= 'H') val = key - 'A' + 1;
+	else if (key >= '1' && key <= '8') val = key - '0';
+
+	if (esColumna && val >= 1 && val <= 8)
+	{
+		if (numEntrada < 4) entrada[numEntrada++] = val;
+	}
+	else if (!esColumna && val >= 1 && val <= 8)
+	{
+		if (numEntrada < 4) entrada[numEntrada++] = val;
+	}
+
+	if (numEntrada == 4)
+	{
+		int srcX = entrada[0], srcY = entrada[1];
+		int dstX = entrada[2], dstY = entrada[3];
+		Pieza *pieza = tablero.MatrizPuntero[srcX - 1][srcY - 1];
+
+		bool valido = false;
+		if (pieza != 0)
+		{
+			bool esBlanca = pieza->getColor();
+			bool turnoBlancas = (CoordinadorAjedrez::quien == 1);
+			if (esBlanca == turnoBlancas) valido = true;
+		}
+
+		if (valido)
+			ejecutarMovimiento(srcX, srcY, dstX, dstY);
+
+		modoEntrada = false;
+		numEntrada = 0;
 	}
 }
 inline void Mundo::MenuB()
 {
-	int xpos, ypos;
-	int x, y;
-	bool pasoturno = FALSE;
-
-	do
-	{
-		cout << "\t\t\tTURNO DE LAS BLANCAS. Escriba las coordenadas de la Pieza que desee mover:\t ";
-		cin >> xpos >> ypos;
-
-		// Hacemos un bucle hasta del que no puede salir hasata que ponga la coordenada de una pieza blanca
-		do
-		{
-			if ((Mundo::tablero.MatrizPuntero[xpos - 1][ypos - 1] == 0) || ((Mundo::tablero.MatrizPuntero[xpos - 1][ypos - 1]->getColor()) == 0))
-			{
-				cout << "\t\t\tCoordenada incorrecta, introduzca otra:\t ";
-				cin >> xpos >> ypos;
-			}
-		} while (((Mundo::tablero.MatrizPuntero[xpos - 1][ypos - 1]) == 0) || ((Mundo::tablero.MatrizPuntero[xpos - 1][ypos - 1]->getColor()) == 0));
-
-		// Una vez que nos hemos asegurado que coje una pieza blancaa procedemos al movimiento de la pieza
-		// Ahora ponemos identificamos la pieza seleccionada
-
-		cout << "La pieza que quieres mover es un " << (tablero.MatrizPuntero[xpos - 1][ypos - 1]->getNombre()) << endl;
-		cout << "Indique las coordenadas a las que quiere mover el " << tablero.MatrizPuntero[xpos - 1][ypos - 1]->getNombre() << endl;
-		cin >> x >> y;
-		if (strcmp((tablero.MatrizPuntero[xpos - 1][ypos - 1]->getNombre()), "Rey") == 0)
-		{
-			if (((tablero.MatrizPuntero[xpos - 1][ypos - 1]))->moverPieza(x, y) != 1)
-			{
-				pasoturno = Enroque(x, y);
-			}
-		}
-		else
-		{
-			pasoturno = (((tablero.MatrizPuntero[xpos - 1][ypos - 1]))->moverPieza(x, y));
-		}
-
-	} while (pasoturno == FALSE);
-
-	if (Mundo::JaqueN())
-	{
-		reyN.jaque = 1;
-
-		cout << "\t\t\t";
-		cout << "****************" << "\tJAQUE AL REY NEGRO\t" << "****************";
-		cout << endl;
-	}
-	if (Mundo::JaqueN() == 0)
-	{
-		reyN.jaque = 0;
-	}
-
-	if (Mundo::JaqueB())
-	{
-		reyB.jaque = 1;
-		printf("\t\t\t");
-		cout << "****************" << "\tJAQUE AL REY BLANCO\t" << "****************";
-		cout << endl;
-	}
-	if (Mundo::JaqueB() == 0)
-	{
-		reyB.jaque = 0;
-	}
-
-	cout << "\n\n";
-	for (int j = 7; j > -1; j--)
-	{
-		printf("\n");
-		for (int i = 0; i < 8; i++)
-		{
-			printf("%d\t", tablero.posiciones[i][j]);
-		}
-	}
-	cout << "\n";
-
-	cout << "\n";
-	for (int j = 7; j > -1; j--)
-	{
-		printf("\n");
-		for (int i = 0; i < 8; i++)
-		{
-			printf("%d  ", (int)Mundo::tablero.MatrizPuntero[i][j]);
-		}
-	}
-	cout << "\n";
 }
 inline void Mundo::MenuN()
 {
-	int xpos, ypos;
-	int x, y;
-	bool pasoturno = FALSE;
-
-	do
-	{
-		cout << "\t\t\tTURNO DE LAS NEGRAS. Escriba las coordenadas de la Pieza que desee mover:\t ";
-		cin >> xpos >> ypos;
-
-		// Hacemos un bucle hasta del que no puede salir hasata que ponga la coordenada de una pieza blanca
-		do
-		{
-			if ((Mundo::tablero.MatrizPuntero[xpos - 1][ypos - 1] == 0) || ((Mundo::tablero.MatrizPuntero[xpos - 1][ypos - 1]->getColor()) == 1))
-			{
-				cout << "\t\t\tCoordenada incorrecta, introduzca otra:\t ";
-				cin >> xpos >> ypos;
-			}
-		} while (((Mundo::tablero.MatrizPuntero[xpos - 1][ypos - 1]) == 0) || ((Mundo::tablero.MatrizPuntero[xpos - 1][ypos - 1]->getColor()) == 1));
-
-		// Una vez que nos hemos asegurado que coje una pieza negra procedemos al movimiento de la pieza
-		// Ahora identificamos la pieza seleccionada
-
-		cout << "La pieza que quieres mover es un " << (tablero.MatrizPuntero[xpos - 1][ypos - 1]->getNombre()) << endl;
-		cout << "Indique las coordenadas a las que quiere mover el " << tablero.MatrizPuntero[xpos - 1][ypos - 1]->getNombre() << endl;
-		cin >> x >> y;
-		if (strcmp((tablero.MatrizPuntero[xpos - 1][ypos - 1]->getNombre()), "Rey") == 0)
-		{
-			if (((tablero.MatrizPuntero[xpos - 1][ypos - 1]))->moverPieza(x, y) != 1)
-			{
-				pasoturno = Enroque(x, y);
-			}
-		}
-		else
-		{
-			pasoturno = (((tablero.MatrizPuntero[xpos - 1][ypos - 1]))->moverPieza(x, y));
-		}
-
-	} while (pasoturno == FALSE);
-
-	if (Mundo::JaqueN())
-	{
-		reyN.jaque = 1;
-
-		printf("\t\t\t");
-		cout << "****************" << "\tJAQUE AL REY NEGRO\t" << "****************";
-		cout << endl;
-	}
-	if (Mundo::JaqueN() == 0)
-	{
-		reyN.jaque = 0;
-	}
-
-	if (Mundo::JaqueB())
-	{
-		reyB.jaque = 1;
-		printf("\t\t\t");
-		cout << "****************" << "\tJAQUE AL REY BLANCO\t" << "****************";
-		cout << endl;
-	}
-	if (Mundo::JaqueB() == 0)
-	{
-		reyB.jaque = 0;
-	}
-
-	cout << "\n\n";
-	for (int j = 7; j > -1; j--)
-	{
-		cout << "\n";
-		for (int i = 0; i < 8; i++)
-		{
-			cout << ("%d\t", Mundo::tablero.posiciones[i][j]);
-		}
-	}
 }
 
 bool Mundo::JaqueN()
@@ -425,116 +314,184 @@ bool Mundo::JaqueB()
 }
 Vector Mundo::PedirPieza(int x, int y)
 {
-	cout << x << endl
-		 << y << endl;
-
 	Vector coordenadaspos;
 	coordenadaspos.x = 0;
 	coordenadaspos.y = 0;
 
 	coordenadaspos = convertirpixelscoordenadas(x, y);
-	if (Mundo::tablero.MatrizPuntero[coordenadaspos.x - 1][coordenadaspos.y - 1] != 0)
+
+	if (coordenadaspos.x < 1 || coordenadaspos.x > 8 || coordenadaspos.y < 1 || coordenadaspos.y > 8)
 	{
-		cout << "La pieza que quieres mover es un " << Mundo::tablero.MatrizPuntero[coordenadaspos.x - 1][coordenadaspos.y - 1]->getNombre() << endl;
+		seleccionValida = false;
+		return coordenadaspos;
 	}
+
+	Pieza *p = tablero.MatrizPuntero[coordenadaspos.x - 1][coordenadaspos.y - 1];
+	if (p == 0)
+	{
+		seleccionValida = false;
+		return coordenadaspos;
+	}
+
+	bool esBlanca = p->getColor();
+	bool turnoBlancas = (CoordinadorAjedrez::quien == 1);
+	if (esBlanca != turnoBlancas)
+	{
+		seleccionValida = false;
+		return coordenadaspos;
+	}
+
+	seleccionValida = true;
+	haySeleccion = true;
+	selX = coordenadaspos.x;
+	selY = coordenadaspos.y;
 
 	return coordenadaspos;
 }
 void Mundo::MoverPieza(Vector posicionPieza, int x, int y)
 {
+	if (!seleccionValida) return;
+
 	Vector coordenadas;
 	coordenadas.x = 0;
 	coordenadas.y = 0;
 	coordenadas = convertirpixelscoordenadas(x, y);
 
-	if (Mundo::tablero.MatrizPuntero[posicionPieza.x - 1][posicionPieza.y - 1] != 0)
+	if (coordenadas.x < 1 || coordenadas.x > 8 || coordenadas.y < 1 || coordenadas.y > 8) return;
+	if (posicionPieza.x < 1 || posicionPieza.x > 8 || posicionPieza.y < 1 || posicionPieza.y > 8) return;
+
+	Pieza *pieza = tablero.MatrizPuntero[posicionPieza.x - 1][posicionPieza.y - 1];
+	if (pieza == 0) return;
+
+	bool exito = false;
+	if (strcmp(pieza->getNombre(), "Rey") == 0)
 	{
-
-		if (strcmp((tablero.MatrizPuntero[posicionPieza.x - 1][posicionPieza.y - 1]->getNombre()), "Rey") == 0)
+		exito = pieza->moverPieza(coordenadas.x, coordenadas.y);
+		if (!exito)
 		{
-			if (((tablero.MatrizPuntero[posicionPieza.x - 1][posicionPieza.y - 1]))->moverPieza(coordenadas.x, coordenadas.y) != 1)
-			{
-				Enroque(x, y);
-			}
-		}
-		else
-		{
-			((tablero.MatrizPuntero[posicionPieza.x - 1][posicionPieza.y - 1]))->moverPieza(coordenadas.x, coordenadas.y);
-		}
-		if (Mundo::JaqueN())
-		{
-			reyN.jaque = 1;
-
-			printf("\t\t\t");
-			cout << "****************" << "\tJAQUE AL REY NEGRO\t" << "****************";
-			cout << endl;
-		}
-		if (Mundo::JaqueN() == 0)
-		{
-			reyN.jaque = 0;
-		}
-
-		if (Mundo::JaqueB())
-		{
-			reyB.jaque = 1;
-			printf("\t\t\t");
-			cout << "****************" << "\tJAQUE AL REY BLANCO\t" << "****************";
-			cout << endl;
-		}
-		if (Mundo::JaqueB() == 0)
-		{
-			reyB.jaque = 0;
+			exito = Enroque(coordenadas.x, coordenadas.y);
 		}
 	}
-	cout << "\n";
-
-	for (int j = 7; j > -1; j--)
+	else
 	{
-		cout << "\n";
-		for (int i = 0; i < 8; i++)
-		{
-			cout << ("%d\t", Mundo::tablero.posiciones[i][j]);
-		}
+		exito = pieza->moverPieza(coordenadas.x, coordenadas.y);
 	}
 
-	cout << "\n";
+	if (exito)
+	{
+		if (JaqueN()) reyN.jaque = 1;
+		else reyN.jaque = 0;
+		if (JaqueB()) reyB.jaque = 1;
+		else reyB.jaque = 0;
+		toggleTurno();
+	}
+
+	haySeleccion = false;
+	seleccionValida = false;
 }
 Vector Mundo::convertirpixelscoordenadas(int xpixel, int ypixel)
 {
 	Vector coordenadas;
 	coordenadas.x = 0;
 	coordenadas.y = 0;
-	// CON LA PANTALLA DE LA SALA DE OREDENADORES
-	// Anchura de x=65.25
-	// Anchura de y=92.37
 
-	/*
-	for (int i = 0;i < 8;i++) {
-	if ((220 +i*62< xpixel) && (xpixel < 220+62+i*62)) {
-	coordenadas.x = i+1;
-	}
+	extern GLdouble g_modelview[16], g_projection[16];
+	extern GLint g_viewport[4];
 
-	if ((875-92*i > ypixel) && (ypixel > 875-92-92*i)) {
-	coordenadas.y = i+1;
-	}
-	}
+	GLdouble winX = (GLdouble)xpixel;
+	GLdouble winY = (GLdouble)g_viewport[3] - (GLdouble)ypixel;
+
+	GLdouble nearX, nearY, nearZ, farX, farY, farZ;
+	gluUnProject(winX, winY, 0.0, g_modelview, g_projection, g_viewport, &nearX, &nearY, &nearZ);
+	gluUnProject(winX, winY, 1.0, g_modelview, g_projection, g_viewport, &farX, &farY, &farZ);
+
+	double t = -nearZ / (farZ - nearZ);
+	double worldX = nearX + t * (farX - nearX);
+	double worldY = nearY + t * (farY - nearY);
+
+	int ix = (int)(worldX / Tablero::Ancho_Cuadrado);
+	int iy = (int)(worldY / Tablero::Ancho_Cuadrado);
+
+	if (ix >= 0 && ix < 8) coordenadas.x = ix + 1;
+	if (iy >= 0 && iy < 8) coordenadas.y = iy + 1;
+
 	return coordenadas;
-	*/
-	// CON LAS COORDENADAS DE MI PORTATIL
-	// ANCHURA DE X=52.375
-	// ANCHURA DE Y=76
-
-	for (int i = 0; i < 8; i++)
+}
+void Mundo::ejecutarMovimiento(int srcX, int srcY, int dstX, int dstY)
+{
+	if (srcX < 1 || srcX > 8 || srcY < 1 || srcY > 8 || dstX < 1 || dstX > 8 || dstY < 1 || dstY > 8) return;
+	Pieza *pieza = tablero.MatrizPuntero[srcX - 1][srcY - 1];
+	if (pieza == 0) return;
+	bool exito = false;
+	if (strcmp(pieza->getNombre(), "Rey") == 0)
 	{
-		if ((173 + i * 52 < xpixel) && (xpixel < 173 + 52 + i * 52))
-		{
-			coordenadas.x = i + 1;
-		}
-
-		if ((721 - 76 * i > ypixel) && (ypixel > 721 - 76 - 76 * i))
-		{
-			coordenadas.y = i + 1;
-		}
+		exito = pieza->moverPieza(dstX, dstY);
+		if (!exito) exito = Enroque(dstX, dstY);
 	}
-	return coordenadas;
+	else
+	{
+		exito = pieza->moverPieza(dstX, dstY);
+	}
+	if (exito)
+	{
+		if (JaqueN()) reyN.jaque = 1;
+		else reyN.jaque = 0;
+		if (JaqueB()) reyB.jaque = 1;
+		else reyB.jaque = 0;
+		toggleTurno();
+	}
+}
+void Mundo::toggleTurno()
+{
+	if (CoordinadorAjedrez::quien == 1) CoordinadorAjedrez::quien = 0;
+	else CoordinadorAjedrez::quien = 1;
+}
+void Mundo::dibujarSeleccion()
+{
+	if (!haySeleccion) return;
+	float xpos = (selX - 1) * Tablero::Ancho_Cuadrado;
+	float ypos = (selY - 1) * Tablero::Ancho_Cuadrado;
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glColor4f(1.0f, 1.0f, 0.0f, 0.3f);
+	glBegin(GL_POLYGON);
+	glVertex3f(xpos, ypos, 0.05f);
+	glVertex3f(xpos + Tablero::Ancho_Cuadrado, ypos, 0.05f);
+	glVertex3f(xpos + Tablero::Ancho_Cuadrado, ypos + Tablero::Ancho_Cuadrado, 0.05f);
+	glVertex3f(xpos, ypos + Tablero::Ancho_Cuadrado, 0.05f);
+	glEnd();
+	glDisable(GL_BLEND);
+}
+void Mundo::dibujarTurnoInfo()
+{
+	if (modoEntrada)
+	{
+		char buf[32];
+		const char *cols = "abcdefgh";
+		buf[0] = '\0';
+		for (int i = 0; i < numEntrada; i++)
+		{
+			if (i % 2 == 0)
+				sprintf(buf + strlen(buf), "%c ", cols[entrada[i] - 1]);
+			else
+				sprintf(buf + strlen(buf), "%d ", entrada[i]);
+		}
+		if (numEntrada < 4)
+		{
+			char expected = (numEntrada % 2 == 0) ? '?' : '?';
+			sprintf(buf + strlen(buf), "_");
+		}
+		ETSIDI::setTextColor(255, 255, 0);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 18);
+		ETSIDI::printxy("ENTRADA:", -10, 32, 2);
+		ETSIDI::printxy(buf, 0, 32, 2);
+	}
+
+	const char *turnoStr = (CoordinadorAjedrez::quien == 1) ? "TURNO BLANCAS" : "TURNO NEGRAS";
+	ETSIDI::setTextColor(255, 255, 0);
+	ETSIDI::setFont("fuentes/Bitwise.ttf", 20);
+	glTranslatef(10.0, -5.0, 0.0);
+	ETSIDI::printxy("TURNO:", 7, 32, 2);
+	ETSIDI::printxy(turnoStr, 7, 29, 2);
+	glTranslatef(-10.0, 5.0, 0.0);
 }
