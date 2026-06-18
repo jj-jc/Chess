@@ -57,7 +57,6 @@ void Mundo::Dibuja()
 	peonN1.dibujarPeonconposicion(), peonN2.dibujarPeonconposicion(), peonN3.dibujarPeonconposicion(), peonN4.dibujarPeonconposicion(), peonN5.dibujarPeonconposicion(), peonN6.dibujarPeonconposicion(), peonN7.dibujarPeonconposicion(), peonN8.dibujarPeonconposicion();
 	reyN.dibujarReyconposicion();
 	torreN1.dibujarTorreconposicion(), torreN2.dibujarTorreconposicion();
-	glEnd();
 	int a = 7, b = -10, c = -2;
 	glTranslatef(a, b, c);
 	glEnable(GL_TEXTURE_2D);
