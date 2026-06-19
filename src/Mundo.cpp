@@ -82,16 +82,17 @@ void Mundo::Dibuja()
 	if (promocionPendiente) dibujarPromocion();
 	dibujarEstado();
 
-	glTranslatef(-1.2, 0.5, 0.0);
 	ETSIDI::setTextColor(200, 200, 200);
-	ETSIDI::setFont("fuentes/HarryPotter.ttf", 35);
-	for (char i = '1'; i < '9'; i++)
+	ETSIDI::setFont("fuentes/Bitwise.ttf", 14);
+	for (int idx = 0; idx < 8; idx++)
 	{
-		ETSIDI::printxy(&i, 2 * (i - 48), -2, 2);
-		ETSIDI::printxy(&i, 0, 2 * (i - 48) - 2, 2);
+		/* Horizontal labels (A-H): centered on each column, below the board */
+		char letter[2] = {(char)('A' + idx), '\0'};
+		ETSIDI::printxy(letter, 2 * idx + 1, -2, 0);
+		/* Vertical labels (1-8): centered on each row, left of the board */
+		char number[2] = {(char)('1' + idx), '\0'};
+		ETSIDI::printxy(number, -2, 2 * idx + 1, 0);
 	}
-
-	glTranslatef(1.2, -0.5, 0.0);
 
 	glEnable(GL_LIGHTING);
 }

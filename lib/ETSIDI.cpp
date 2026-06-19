@@ -133,7 +133,7 @@ void ETSIDI::printxy(const char *txt, int x, int y, int z) {
     /* FreeType pixel sizes become enormous in world space with a perspective
      * projection (the visible area is only ~80×60 units).  Scale the quad
      * down so text fits on screen.  Tweak this factor as needed. */
-    const float kScale = 1.0f / 12.0f;
+    const float kScale = 1.0f / 15.0f;
     float sw = (float)w * kScale;
     float sh = (float)h * kScale;
 
@@ -150,11 +150,14 @@ void ETSIDI::printxy(const char *txt, int x, int y, int z) {
     glDepthMask(GL_FALSE);
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, texId);
+    /* FreeType rasterises glyphs top-to-bottom in the bitmap (row 0 = top).
+     * OpenGL texture (0,0) is the bottom of the data array, so we must flip
+     * the t-coordinate to make the text appear upright. */
     glBegin(GL_POLYGON);
-    glTexCoord2d(0, 0); glVertex3f((float)x, (float)y, (float)z);
-    glTexCoord2d(1, 0); glVertex3f((float)(x + sw), (float)y, (float)z);
-    glTexCoord2d(1, 1); glVertex3f((float)(x + sw), (float)(y + sh), (float)z);
-    glTexCoord2d(0, 1); glVertex3f((float)x, (float)(y + sh), (float)z);
+    glTexCoord2d(0, 1); glVertex3f((float)x, (float)y, (float)z);
+    glTexCoord2d(1, 1); glVertex3f((float)(x + sw), (float)y, (float)z);
+    glTexCoord2d(1, 0); glVertex3f((float)(x + sw), (float)(y + sh), (float)z);
+    glTexCoord2d(0, 0); glVertex3f((float)x, (float)(y + sh), (float)z);
     glEnd();
     glDisable(GL_TEXTURE_2D);
     glDepthMask(GL_TRUE);
