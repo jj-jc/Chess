@@ -23,6 +23,7 @@ public:
 	//m�todos para los atributos
 	
 	void SetPos(int x, int y);
+	void setDisplayPos(int x, int y) { posicion.x = x; posicion.y = y; }
 	Vector getPos() { return posicion; }
 	void setNombre(char minombre[10]) { strcpy(nombre,minombre); }
 	char *getNombre() { return nombre; }

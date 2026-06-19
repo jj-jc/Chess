@@ -397,15 +397,55 @@ inline void Mundo::MenuN()
 {
 }
 
+/* Helper: true if the piece sits on a valid board square (1..8) */
+static inline bool onBoard(Pieza &p) {
+    Vector v = p.getPos();
+    return v.x >= 1 && v.x <= 8 && v.y >= 1 && v.y <= 8;
+}
+
 bool Mundo::JaqueN()
 {
-	return (alfilB1.PuedoMoverAlfil(reyN.getPos().x, reyN.getPos().y) || alfilB2.PuedoMoverAlfil(reyN.getPos().x, reyN.getPos().y) || caballoB1.PuedoMoverCaballo(reyN.getPos().x, reyN.getPos().y) || caballoB2.PuedoMoverCaballo(reyN.getPos().x, reyN.getPos().y) || torreB1.PuedoMoverTorre(reyN.getPos().x, reyN.getPos().y) || torreB2.PuedoMoverTorre(reyN.getPos().x, reyN.getPos().y) || damaB.PuedoMoverDama(reyN.getPos().x, reyN.getPos().y) ||
-			peonB1.PuedoMoverAlfil(reyN.getPos().x, reyN.getPos().y) || peonB2.PuedoMoverAlfil(reyN.getPos().x, reyN.getPos().y) || peonB3.PuedoMoverAlfil(reyN.getPos().x, reyN.getPos().y) || peonB4.PuedoMoverAlfil(reyN.getPos().x, reyN.getPos().y) || peonB5.PuedoMoverAlfil(reyN.getPos().x, reyN.getPos().y) || peonB6.PuedoMoverAlfil(reyN.getPos().x, reyN.getPos().y) || peonB7.PuedoMoverAlfil(reyN.getPos().x, reyN.getPos().y) || peonB8.PuedoMoverAlfil(reyN.getPos().x, reyN.getPos().y));
+	/* Only check pieces that are still physically on the board.
+	 * Captured pieces are off-board and must not participate. */
+	bool check = false;
+	if (onBoard(alfilB1)) check = check || alfilB1.PuedoMoverAlfil(reyN.getPos().x, reyN.getPos().y);
+	if (onBoard(alfilB2)) check = check || alfilB2.PuedoMoverAlfil(reyN.getPos().x, reyN.getPos().y);
+	if (onBoard(caballoB1)) check = check || caballoB1.PuedoMoverCaballo(reyN.getPos().x, reyN.getPos().y);
+	if (onBoard(caballoB2)) check = check || caballoB2.PuedoMoverCaballo(reyN.getPos().x, reyN.getPos().y);
+	if (onBoard(torreB1)) check = check || torreB1.PuedoMoverTorre(reyN.getPos().x, reyN.getPos().y);
+	if (onBoard(torreB2)) check = check || torreB2.PuedoMoverTorre(reyN.getPos().x, reyN.getPos().y);
+	if (onBoard(damaB)) check = check || damaB.PuedoMoverDama(reyN.getPos().x, reyN.getPos().y);
+	/* Pawns: use PuedoMoverPeon (diagonal ONE square forward) instead of
+	 * PuedoMoverAlfil which would check along the entire diagonal. */
+	if (onBoard(peonB1)) check = check || peonB1.PuedoMoverPeon(reyN.getPos().x, reyN.getPos().y);
+	if (onBoard(peonB2)) check = check || peonB2.PuedoMoverPeon(reyN.getPos().x, reyN.getPos().y);
+	if (onBoard(peonB3)) check = check || peonB3.PuedoMoverPeon(reyN.getPos().x, reyN.getPos().y);
+	if (onBoard(peonB4)) check = check || peonB4.PuedoMoverPeon(reyN.getPos().x, reyN.getPos().y);
+	if (onBoard(peonB5)) check = check || peonB5.PuedoMoverPeon(reyN.getPos().x, reyN.getPos().y);
+	if (onBoard(peonB6)) check = check || peonB6.PuedoMoverPeon(reyN.getPos().x, reyN.getPos().y);
+	if (onBoard(peonB7)) check = check || peonB7.PuedoMoverPeon(reyN.getPos().x, reyN.getPos().y);
+	if (onBoard(peonB8)) check = check || peonB8.PuedoMoverPeon(reyN.getPos().x, reyN.getPos().y);
+	return check;
 }
 bool Mundo::JaqueB()
 {
-	return (alfilN1.PuedoMoverAlfil(reyB.getPos().x, reyB.getPos().y) || alfilN2.PuedoMoverAlfil(reyB.getPos().x, reyB.getPos().y) || caballoN1.PuedoMoverCaballo(reyB.getPos().x, reyB.getPos().y) || caballoN2.PuedoMoverCaballo(reyB.getPos().x, reyB.getPos().y) || torreN1.PuedoMoverTorre(reyB.getPos().x, reyB.getPos().y) || torreN2.PuedoMoverTorre(reyB.getPos().x, reyB.getPos().y) || damaN.PuedoMoverDama(reyB.getPos().x, reyB.getPos().y) ||
-			peonN1.PuedoMoverAlfil(reyB.getPos().x, reyB.getPos().y) || peonN2.PuedoMoverAlfil(reyB.getPos().x, reyB.getPos().y) || peonN3.PuedoMoverAlfil(reyB.getPos().x, reyB.getPos().y) || peonN4.PuedoMoverAlfil(reyB.getPos().x, reyB.getPos().y) || peonN5.PuedoMoverAlfil(reyB.getPos().x, reyB.getPos().y) || peonN6.PuedoMoverAlfil(reyB.getPos().x, reyB.getPos().y) || peonN7.PuedoMoverAlfil(reyB.getPos().x, reyB.getPos().y) || peonN8.PuedoMoverAlfil(reyB.getPos().x, reyB.getPos().y));
+	bool check = false;
+	if (onBoard(alfilN1)) check = check || alfilN1.PuedoMoverAlfil(reyB.getPos().x, reyB.getPos().y);
+	if (onBoard(alfilN2)) check = check || alfilN2.PuedoMoverAlfil(reyB.getPos().x, reyB.getPos().y);
+	if (onBoard(caballoN1)) check = check || caballoN1.PuedoMoverCaballo(reyB.getPos().x, reyB.getPos().y);
+	if (onBoard(caballoN2)) check = check || caballoN2.PuedoMoverCaballo(reyB.getPos().x, reyB.getPos().y);
+	if (onBoard(torreN1)) check = check || torreN1.PuedoMoverTorre(reyB.getPos().x, reyB.getPos().y);
+	if (onBoard(torreN2)) check = check || torreN2.PuedoMoverTorre(reyB.getPos().x, reyB.getPos().y);
+	if (onBoard(damaN)) check = check || damaN.PuedoMoverDama(reyB.getPos().x, reyB.getPos().y);
+	if (onBoard(peonN1)) check = check || peonN1.PuedoMoverPeon(reyB.getPos().x, reyB.getPos().y);
+	if (onBoard(peonN2)) check = check || peonN2.PuedoMoverPeon(reyB.getPos().x, reyB.getPos().y);
+	if (onBoard(peonN3)) check = check || peonN3.PuedoMoverPeon(reyB.getPos().x, reyB.getPos().y);
+	if (onBoard(peonN4)) check = check || peonN4.PuedoMoverPeon(reyB.getPos().x, reyB.getPos().y);
+	if (onBoard(peonN5)) check = check || peonN5.PuedoMoverPeon(reyB.getPos().x, reyB.getPos().y);
+	if (onBoard(peonN6)) check = check || peonN6.PuedoMoverPeon(reyB.getPos().x, reyB.getPos().y);
+	if (onBoard(peonN7)) check = check || peonN7.PuedoMoverPeon(reyB.getPos().x, reyB.getPos().y);
+	if (onBoard(peonN8)) check = check || peonN8.PuedoMoverPeon(reyB.getPos().x, reyB.getPos().y);
+	return check;
 }
 Vector Mundo::PedirPieza(int x, int y)
 {
@@ -485,7 +525,8 @@ void Mundo::MoverPieza(Vector posicionPieza, int x, int y)
 		return;
 	}
 
-	if (tablero.MatrizPuntero[coordenadas.x - 1][coordenadas.y - 1] != 0)
+	Pieza *captured = tablero.MatrizPuntero[coordenadas.x - 1][coordenadas.y - 1];
+	if (captured != 0)
 		registrarCaptura(coordenadas.x, coordenadas.y);
 
 	bool exito = false;
@@ -504,6 +545,13 @@ void Mundo::MoverPieza(Vector posicionPieza, int x, int y)
 
 	if (exito)
 	{
+		if (captured)
+		{
+			int col = (captured->getColor() == 1)
+				? numCapturadasBlancas - 1
+				: numCapturadasNegras - 1;
+			captured->setDisplayPos(9 + col / 4, 1 + 2 * (col % 4));
+		}
 		if (JaqueN()) reyN.jaque = 1;
 		else reyN.jaque = 0;
 		if (JaqueB()) reyB.jaque = 1;
@@ -552,7 +600,9 @@ void Mundo::ejecutarMovimiento(int srcX, int srcY, int dstX, int dstY)
 	if (srcX < 1 || srcX > 8 || srcY < 1 || srcY > 8 || dstX < 1 || dstX > 8 || dstY < 1 || dstY > 8) return;
 	Pieza *pieza = tablero.MatrizPuntero[srcX - 1][srcY - 1];
 	if (pieza == 0) return;
-	if (tablero.MatrizPuntero[dstX - 1][dstY - 1] != 0)
+	/* Remember the piece that will be captured before moverPieza resets it */
+	Pieza *captured = tablero.MatrizPuntero[dstX - 1][dstY - 1];
+	if (captured != 0)
 		registrarCaptura(dstX, dstY);
 	bool exito = false;
 	if (strcmp(pieza->getNombre(), "Rey") == 0)
@@ -566,6 +616,18 @@ void Mundo::ejecutarMovimiento(int srcX, int srcY, int dstX, int dstY)
 	}
 	if (exito)
 	{
+		/* Place the captured piece at a unique off-board position.
+		 * moverPieza → SetPos → capturar() has already put it at (0,0);
+		 * we override with a display coordinate. */
+		if (captured)
+		{
+			int col = (captured->getColor() == 1)
+				? numCapturadasBlancas - 1
+				: numCapturadasNegras - 1;
+			/* Right of the board (x=9..12), staggered vertically (y=1,3,5,7).
+			 * The piece drawing formula 2*pos-1 maps to visible world coords. */
+			captured->setDisplayPos(9 + col / 4, 1 + 2 * (col % 4));
+		}
 		if (JaqueN()) reyN.jaque = 1;
 		else reyN.jaque = 0;
 		if (JaqueB()) reyB.jaque = 1;
