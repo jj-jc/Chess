@@ -550,7 +550,9 @@ void Mundo::MoverPieza(Vector posicionPieza, int x, int y)
 			int col = (captured->getColor() == 1)
 				? numCapturadasBlancas - 1
 				: numCapturadasNegras - 1;
-			captured->setDisplayPos(9 + col / 4, 1 + 2 * (col % 4));
+			/* White captives at x=9..10, black captives at x=11..12 */
+			int baseX = (captured->getColor() == 1) ? 9 : 11;
+			captured->setDisplayPos(baseX + col / 4, 1 + 2 * (col % 4));
 		}
 		if (JaqueN()) reyN.jaque = 1;
 		else reyN.jaque = 0;
@@ -624,9 +626,10 @@ void Mundo::ejecutarMovimiento(int srcX, int srcY, int dstX, int dstY)
 			int col = (captured->getColor() == 1)
 				? numCapturadasBlancas - 1
 				: numCapturadasNegras - 1;
-			/* Right of the board (x=9..12), staggered vertically (y=1,3,5,7).
+			/* White captives at x=9..10, black captives at x=11..12.
 			 * The piece drawing formula 2*pos-1 maps to visible world coords. */
-			captured->setDisplayPos(9 + col / 4, 1 + 2 * (col % 4));
+			int baseX = (captured->getColor() == 1) ? 9 : 11;
+			captured->setDisplayPos(baseX + col / 4, 1 + 2 * (col % 4));
 		}
 		if (JaqueN()) reyN.jaque = 1;
 		else reyN.jaque = 0;
