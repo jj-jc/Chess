@@ -16,6 +16,10 @@ static int currentFontSize = 12;
 static float textR = 1.0f, textG = 1.0f, textB = 1.0f, textA = 1.0f;
 static std::string currentFontPath;
 
+/*  Texture cache: avoids loading PNG from disk every frame.
+ *  getTexture() checks this map first and only loads+uploads on a miss. */
+static std::map<std::string, ETSIDI::GLTexture> s_textureCache;
+
 static bool initFreeType() {
     if (ftLibrary) return true;
     if (FT_Init_FreeType(&ftLibrary) != 0) {
@@ -43,6 +47,11 @@ static bool loadFont(const char *path, int size) {
 }
 
 ETSIDI::GLTexture ETSIDI::getTexture(const char *texturePath) {
+    /* Check cache first */
+    auto it = s_textureCache.find(texturePath);
+    if (it != s_textureCache.end())
+        return it->second;
+
     GLTexture result = {0, 0, 0};
     int w, h, channels;
     unsigned char *data = stbi_load(texturePath, &w, &h, &channels, 4);
@@ -60,6 +69,7 @@ ETSIDI::GLTexture ETSIDI::getTexture(const char *texturePath) {
     result.id = texId;
     result.width = w;
     result.height = h;
+    s_textureCache[texturePath] = result;
     return result;
 }
 
@@ -120,6 +130,13 @@ void ETSIDI::printxy(const char *txt, int x, int y, int z) {
         }
         penX += slot->advance.x >> 6;
     }
+    /* FreeType pixel sizes become enormous in world space with a perspective
+     * projection (the visible area is only ~80×60 units).  Scale the quad
+     * down so text fits on screen.  Tweak this factor as needed. */
+    const float kScale = 1.0f / 12.0f;
+    float sw = (float)w * kScale;
+    float sh = (float)h * kScale;
+
     GLuint texId;
     glGenTextures(1, &texId);
     glBindTexture(GL_TEXTURE_2D, texId);
@@ -128,15 +145,19 @@ void ETSIDI::printxy(const char *txt, int x, int y, int z) {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    /* Prevent transparent text texels from writing phantom depth values
+     * that occlude board geometry behind them. */
+    glDepthMask(GL_FALSE);
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, texId);
     glBegin(GL_POLYGON);
     glTexCoord2d(0, 0); glVertex3f((float)x, (float)y, (float)z);
-    glTexCoord2d(1, 0); glVertex3f((float)(x + w), (float)y, (float)z);
-    glTexCoord2d(1, 1); glVertex3f((float)(x + w), (float)(y + h), (float)z);
-    glTexCoord2d(0, 1); glVertex3f((float)x, (float)(y + h), (float)z);
+    glTexCoord2d(1, 0); glVertex3f((float)(x + sw), (float)y, (float)z);
+    glTexCoord2d(1, 1); glVertex3f((float)(x + sw), (float)(y + sh), (float)z);
+    glTexCoord2d(0, 1); glVertex3f((float)x, (float)(y + sh), (float)z);
     glEnd();
     glDisable(GL_TEXTURE_2D);
+    glDepthMask(GL_TRUE);
     glDisable(GL_BLEND);
     glDeleteTextures(1, &texId);
     free(buffer);
