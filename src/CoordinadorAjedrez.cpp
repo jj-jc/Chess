@@ -31,18 +31,18 @@ void CoordinadorAjedrez::dibuja()
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
 		glTexCoord2d(0, 1);
-		glVertex3f(-15, -15, -0.1); //
+		glVertex3f(-15, -7.5, -0.1); //
 		glTexCoord2d(1, 1);
-		glVertex3f(15, -15, -0.1);
+		glVertex3f(15, -7.5, -0.1);
 		glTexCoord2d(1, 0);
-		glVertex3f(15, 15, -0.1);
+		glVertex3f(15, 7.5, -0.1);
 		glTexCoord2d(0, 0);
-		glVertex3f(-15, 15, -0.1);
+		glVertex3f(-15, 7.5, -0.1);
 		glEnd();
-		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
 		glTranslatef(0, 10.0, 0.0);
 		glTranslatef(-15.0, -5.0, 0.0);
+		glDisable(GL_LIGHTING);
 		ETSIDI::setTextColor(255, 255, 255);
 		ETSIDI::setFont("fuentes/HarryPotter.ttf", 40);
 		ETSIDI::printxy("A J E D R E Z", 7, 30);
@@ -54,6 +54,7 @@ void CoordinadorAjedrez::dibuja()
 		ETSIDI::setTextColor(255, 0, 0);
 		ETSIDI::setFont("fuentes/HarryPotter.ttf", 18);
 		ETSIDI::printxy("A L E J A N D R O    G O N Z A L E Z  y   J U A N     J O S E     J U R A D O ", -5, 25, 2);
+		glEnable(GL_LIGHTING);
 
 
 	}
@@ -78,9 +79,9 @@ void CoordinadorAjedrez::dibuja()
 		glTexCoord2d(0, 0);
 		glVertex3f(-30, 30, -0.1);
 		glEnd();
-		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
 		glTranslatef(-10.0, -10.0, 0.0);
+		glDisable(GL_LIGHTING);
 		ETSIDI::setTextColor(255, 0, 0);
 		ETSIDI::setFont("fuentes/HarryPotter.ttf", 25);
 		ETSIDI::printxy("P U L S E     L A     T E C L A     -E-     P A R A    C O N T I N U A R  ", -18, -10);
@@ -89,6 +90,7 @@ void CoordinadorAjedrez::dibuja()
 		ETSIDI::printxy("A L E J A N D R O    G O N Z A L E Z // J U A N     J O S E     J U R A D O ", -10, 30, 2);
 		ETSIDI::setTextColor(0, 0, 0);
 		ETSIDI::setFont("fuentes/HarryPotter.ttf", 45);
+		glEnable(GL_LIGHTING);
 	}
 }
 void CoordinadorAjedrez::tecla(unsigned char key)

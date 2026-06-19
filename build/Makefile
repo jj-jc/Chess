@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yoyosplay/Dev/Chess
+CMAKE_SOURCE_DIR = /home/yoyosplay/repos/Chess
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yoyosplay/Dev/Chess/build
+CMAKE_BINARY_DIR = /home/yoyosplay/repos/Chess/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yoyosplay/Dev/Chess/build/CMakeFiles /home/yoyosplay/Dev/Chess/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yoyosplay/repos/Chess/build/CMakeFiles /home/yoyosplay/repos/Chess/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yoyosplay/Dev/Chess/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yoyosplay/repos/Chess/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -128,6 +128,30 @@ ChessGame: cmake_check_build_system
 ChessGame/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessGame.dir/build.make CMakeFiles/ChessGame.dir/build
 .PHONY : ChessGame/fast
+
+lib/ETSIDI.o: lib/ETSIDI.cpp.o
+.PHONY : lib/ETSIDI.o
+
+# target to build an object file
+lib/ETSIDI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessGame.dir/build.make CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.o
+.PHONY : lib/ETSIDI.cpp.o
+
+lib/ETSIDI.i: lib/ETSIDI.cpp.i
+.PHONY : lib/ETSIDI.i
+
+# target to preprocess a source file
+lib/ETSIDI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessGame.dir/build.make CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.i
+.PHONY : lib/ETSIDI.cpp.i
+
+lib/ETSIDI.s: lib/ETSIDI.cpp.s
+.PHONY : lib/ETSIDI.s
+
+# target to generate assembly for a file
+lib/ETSIDI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessGame.dir/build.make CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.s
+.PHONY : lib/ETSIDI.cpp.s
 
 src/Ajedrez.o: src/Ajedrez.cpp.o
 .PHONY : src/Ajedrez.o
@@ -474,6 +498,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ChessGame"
+	@echo "... lib/ETSIDI.o"
+	@echo "... lib/ETSIDI.i"
+	@echo "... lib/ETSIDI.s"
 	@echo "... src/Ajedrez.o"
 	@echo "... src/Ajedrez.i"
 	@echo "... src/Ajedrez.s"

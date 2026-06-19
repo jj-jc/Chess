@@ -1,5 +1,5 @@
 CMakeFiles/ChessGame.dir/src/Dama.cpp.o: \
- /home/yoyosplay/Dev/Chess/src/Dama.cpp /usr/include/stdc-predef.h \
+ /home/yoyosplay/repos/Chess/src/Dama.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -114,8 +114,8 @@ CMakeFiles/ChessGame.dir/src/Dama.cpp.o: \
  /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/cstddef \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
- /home/yoyosplay/Dev/Chess/src/Dama.h \
- /home/yoyosplay/Dev/Chess/src/Vector.h /usr/include/c++/13/math.h \
+ /home/yoyosplay/repos/Chess/src/Dama.h \
+ /home/yoyosplay/repos/Chess/src/Vector.h /usr/include/c++/13/math.h \
  /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -139,13 +139,13 @@ CMakeFiles/ChessGame.dir/src/Dama.cpp.o: \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
- /home/yoyosplay/Dev/Chess/src/Pieza.h /usr/include/string.h \
- /usr/include/strings.h /home/yoyosplay/Dev/Chess/lib/glut.h \
+ /home/yoyosplay/repos/Chess/src/Pieza.h /usr/include/string.h \
+ /usr/include/strings.h /home/yoyosplay/repos/Chess/lib/glut.h \
  /usr/include/GL/gl.h /usr/include/GL/glext.h \
  /usr/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h /usr/include/GL/glu.h \
- /home/yoyosplay/Dev/Chess/src/Alfil.h \
- /home/yoyosplay/Dev/Chess/src/Torre.h \
- /home/yoyosplay/Dev/Chess/src/Tablero.h
+ /home/yoyosplay/repos/Chess/src/Alfil.h \
+ /home/yoyosplay/repos/Chess/src/Torre.h \
+ /home/yoyosplay/repos/Chess/src/Tablero.h

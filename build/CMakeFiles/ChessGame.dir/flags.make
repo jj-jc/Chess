@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/yoyosplay/Dev/Chess/src -I/home/yoyosplay/Dev/Chess/lib
+CXX_INCLUDES = -I/home/yoyosplay/repos/Chess/src -I/home/yoyosplay/repos/Chess/lib -isystem /usr/include/freetype2
 
 CXX_FLAGS = -g -std=gnu++17
 

@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.o"
+  "CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.o.d"
   "CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.o"
   "CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.o.d"
   "CMakeFiles/ChessGame.dir/src/Alfil.cpp.o"

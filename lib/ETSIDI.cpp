@@ -126,6 +126,8 @@ void ETSIDI::printxy(const char *txt, int x, int y, int z) {
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, buffer);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, texId);
     glBegin(GL_POLYGON);
@@ -135,6 +137,7 @@ void ETSIDI::printxy(const char *txt, int x, int y, int z) {
     glTexCoord2d(0, 1); glVertex3f((float)x, (float)(y + h), (float)z);
     glEnd();
     glDisable(GL_TEXTURE_2D);
+    glDisable(GL_BLEND);
     glDeleteTextures(1, &texId);
     free(buffer);
 }

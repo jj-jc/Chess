@@ -73,10 +73,10 @@ void Mundo::Dibuja()
 	glTexCoord2d(0, 0);
 	glVertex3f(-30, 60, -0.1);
 	glEnd();
-	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);
 	glTranslatef(-a, -b, -c);
 
+	glDisable(GL_LIGHTING);
 	dibujarTurnoInfo();
 	dibujarCapturadas();
 	if (promocionPendiente) dibujarPromocion();

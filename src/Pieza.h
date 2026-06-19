@@ -7,7 +7,7 @@
 
 
 class Pieza {
-	//Atributos Comunes para todas las piezas, para que sea más robusto las pondremos como private
+	//Atributos Comunes para todas las piezas, para que sea mï¿½s robusto las pondremos como private
 	Vector posicion;
 	char nombre[10] = "Pieza";
 	bool color = 1;  //todas blancas por defecto
@@ -16,11 +16,11 @@ public:
 	Pieza() {}
 	//Pieza(int x, int y) { posicion.x = x; posicion.y = y; }
 	~Pieza();
-	//metodos comunes
+	void capturar();
 	void ImprimeNombre();
 	virtual bool moverPieza(int x, int y) = 0;
 
-	//métodos para los atributos
+	//mï¿½todos para los atributos
 	
 	void SetPos(int x, int y);
 	Vector getPos() { return posicion; }

@@ -3,10 +3,6 @@
 #include "Tablero.h"
 
 using namespace std;
-extern int X[8] = {1, 2, 3, 4, 5, 6, 7, 8};
-extern int Y[4] = {-1, -2, 10, 11};
-int i = 0, j = 0;
-int k = 0, l = 2;
 
 void Pieza::ImprimeNombre()
 {
@@ -14,52 +10,34 @@ void Pieza::ImprimeNombre()
 }
 Pieza::~Pieza()
 {
-	if (getColor() == 1)
-	{
-		posicion.x = X[k];
-		posicion.y = Y[l];
-		k++;
-		if (k == 8)
-		{
-			l++;
-			k = 0;
-		}
-	}
-	if (getColor() == 0)
-	{
-		posicion.x = X[i];
-		posicion.y = Y[j];
-		i++;
-		if (i == 8)
-		{
-			j++;
-			i = 0;
-		}
-	}
+}
+void Pieza::capturar()
+{
+	posicion.x = 0;
+	posicion.y = 0;
 }
 void Pieza::SetPos(int x, int y)
 {
-	if ((Tablero::MatrizPuntero[x - 1][y - 1]) != 0)
-	{
-		(Tablero::MatrizPuntero[x - 1][y - 1])->~Pieza();
-	}
-	Tablero::posiciones[posicion.x - 1][posicion.y - 1] = 0;
+	if (x < 1 || x > 8 || y < 1 || y > 8) return;
 
-	Tablero::MatrizPuntero[x - 1][y - 1] = Tablero::MatrizPuntero[posicion.x - 1][posicion.y - 1];
-	Tablero::MatrizPuntero[posicion.x - 1][posicion.y - 1] = 0;
+	Pieza *ocupante = Tablero::MatrizPuntero[x - 1][y - 1];
+	if (ocupante != 0)
+	{
+		ocupante->capturar();
+		Tablero::posiciones[x - 1][y - 1] = 0;
+	}
+
+	if (posicion.x >= 1 && posicion.x <= 8 && posicion.y >= 1 && posicion.y <= 8)
+	{
+		Tablero::posiciones[posicion.x - 1][posicion.y - 1] = 0;
+		Tablero::MatrizPuntero[posicion.x - 1][posicion.y - 1] = 0;
+	}
+
+	Tablero::MatrizPuntero[x - 1][y - 1] = this;
 	posicion.x = x;
 	posicion.y = y;
 
-	if (Pieza::getColor() == 1)
-	{
-		Tablero::posiciones[x - 1][y - 1] = 1;
-		// ES NEGRA
-	}
-	else
-	{
-
-		Tablero::posiciones[x - 1][y - 1] = 2;
-	}
+	Tablero::posiciones[x - 1][y - 1] = (getColor() == 1) ? 1 : 2;
 }
 
 // FUNCIONES PARA DIBUJAR

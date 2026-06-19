@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yoyosplay/Dev/Chess
+CMAKE_SOURCE_DIR = /home/yoyosplay/repos/Chess
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yoyosplay/Dev/Chess/build
+CMAKE_BINARY_DIR = /home/yoyosplay/repos/Chess/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ChessGame.dir/depend.make
@@ -69,204 +69,219 @@ include CMakeFiles/ChessGame.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ChessGame.dir/flags.make
 
+CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.o: CMakeFiles/ChessGame.dir/flags.make
+CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.o: /home/yoyosplay/repos/Chess/lib/ETSIDI.cpp
+CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.o: CMakeFiles/ChessGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/repos/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.o -MF CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.o.d -o CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.o -c /home/yoyosplay/repos/Chess/lib/ETSIDI.cpp
+
+CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/repos/Chess/lib/ETSIDI.cpp > CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.i
+
+CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/repos/Chess/lib/ETSIDI.cpp -o CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.s
+
 CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.o: CMakeFiles/ChessGame.dir/flags.make
-CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.o: /home/yoyosplay/Dev/Chess/src/Ajedrez.cpp
+CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.o: /home/yoyosplay/repos/Chess/src/Ajedrez.cpp
 CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.o: CMakeFiles/ChessGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/Dev/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.o -MF CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.o -c /home/yoyosplay/Dev/Chess/src/Ajedrez.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/repos/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.o -MF CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.o -c /home/yoyosplay/repos/Chess/src/Ajedrez.cpp
 
 CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/Dev/Chess/src/Ajedrez.cpp > CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/repos/Chess/src/Ajedrez.cpp > CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.i
 
 CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/Dev/Chess/src/Ajedrez.cpp -o CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/repos/Chess/src/Ajedrez.cpp -o CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.s
 
 CMakeFiles/ChessGame.dir/src/Alfil.cpp.o: CMakeFiles/ChessGame.dir/flags.make
-CMakeFiles/ChessGame.dir/src/Alfil.cpp.o: /home/yoyosplay/Dev/Chess/src/Alfil.cpp
+CMakeFiles/ChessGame.dir/src/Alfil.cpp.o: /home/yoyosplay/repos/Chess/src/Alfil.cpp
 CMakeFiles/ChessGame.dir/src/Alfil.cpp.o: CMakeFiles/ChessGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/Dev/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ChessGame.dir/src/Alfil.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Alfil.cpp.o -MF CMakeFiles/ChessGame.dir/src/Alfil.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Alfil.cpp.o -c /home/yoyosplay/Dev/Chess/src/Alfil.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/repos/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ChessGame.dir/src/Alfil.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Alfil.cpp.o -MF CMakeFiles/ChessGame.dir/src/Alfil.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Alfil.cpp.o -c /home/yoyosplay/repos/Chess/src/Alfil.cpp
 
 CMakeFiles/ChessGame.dir/src/Alfil.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChessGame.dir/src/Alfil.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/Dev/Chess/src/Alfil.cpp > CMakeFiles/ChessGame.dir/src/Alfil.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/repos/Chess/src/Alfil.cpp > CMakeFiles/ChessGame.dir/src/Alfil.cpp.i
 
 CMakeFiles/ChessGame.dir/src/Alfil.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChessGame.dir/src/Alfil.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/Dev/Chess/src/Alfil.cpp -o CMakeFiles/ChessGame.dir/src/Alfil.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/repos/Chess/src/Alfil.cpp -o CMakeFiles/ChessGame.dir/src/Alfil.cpp.s
 
 CMakeFiles/ChessGame.dir/src/Caballo.cpp.o: CMakeFiles/ChessGame.dir/flags.make
-CMakeFiles/ChessGame.dir/src/Caballo.cpp.o: /home/yoyosplay/Dev/Chess/src/Caballo.cpp
+CMakeFiles/ChessGame.dir/src/Caballo.cpp.o: /home/yoyosplay/repos/Chess/src/Caballo.cpp
 CMakeFiles/ChessGame.dir/src/Caballo.cpp.o: CMakeFiles/ChessGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/Dev/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ChessGame.dir/src/Caballo.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Caballo.cpp.o -MF CMakeFiles/ChessGame.dir/src/Caballo.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Caballo.cpp.o -c /home/yoyosplay/Dev/Chess/src/Caballo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/repos/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ChessGame.dir/src/Caballo.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Caballo.cpp.o -MF CMakeFiles/ChessGame.dir/src/Caballo.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Caballo.cpp.o -c /home/yoyosplay/repos/Chess/src/Caballo.cpp
 
 CMakeFiles/ChessGame.dir/src/Caballo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChessGame.dir/src/Caballo.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/Dev/Chess/src/Caballo.cpp > CMakeFiles/ChessGame.dir/src/Caballo.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/repos/Chess/src/Caballo.cpp > CMakeFiles/ChessGame.dir/src/Caballo.cpp.i
 
 CMakeFiles/ChessGame.dir/src/Caballo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChessGame.dir/src/Caballo.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/Dev/Chess/src/Caballo.cpp -o CMakeFiles/ChessGame.dir/src/Caballo.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/repos/Chess/src/Caballo.cpp -o CMakeFiles/ChessGame.dir/src/Caballo.cpp.s
 
 CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.o: CMakeFiles/ChessGame.dir/flags.make
-CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.o: /home/yoyosplay/Dev/Chess/src/CoordinadorAjedrez.cpp
+CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.o: /home/yoyosplay/repos/Chess/src/CoordinadorAjedrez.cpp
 CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.o: CMakeFiles/ChessGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/Dev/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.o -MF CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.o.d -o CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.o -c /home/yoyosplay/Dev/Chess/src/CoordinadorAjedrez.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/repos/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.o -MF CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.o.d -o CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.o -c /home/yoyosplay/repos/Chess/src/CoordinadorAjedrez.cpp
 
 CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/Dev/Chess/src/CoordinadorAjedrez.cpp > CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/repos/Chess/src/CoordinadorAjedrez.cpp > CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.i
 
 CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/Dev/Chess/src/CoordinadorAjedrez.cpp -o CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/repos/Chess/src/CoordinadorAjedrez.cpp -o CMakeFiles/ChessGame.dir/src/CoordinadorAjedrez.cpp.s
 
 CMakeFiles/ChessGame.dir/src/Dama.cpp.o: CMakeFiles/ChessGame.dir/flags.make
-CMakeFiles/ChessGame.dir/src/Dama.cpp.o: /home/yoyosplay/Dev/Chess/src/Dama.cpp
+CMakeFiles/ChessGame.dir/src/Dama.cpp.o: /home/yoyosplay/repos/Chess/src/Dama.cpp
 CMakeFiles/ChessGame.dir/src/Dama.cpp.o: CMakeFiles/ChessGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/Dev/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ChessGame.dir/src/Dama.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Dama.cpp.o -MF CMakeFiles/ChessGame.dir/src/Dama.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Dama.cpp.o -c /home/yoyosplay/Dev/Chess/src/Dama.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/repos/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ChessGame.dir/src/Dama.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Dama.cpp.o -MF CMakeFiles/ChessGame.dir/src/Dama.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Dama.cpp.o -c /home/yoyosplay/repos/Chess/src/Dama.cpp
 
 CMakeFiles/ChessGame.dir/src/Dama.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChessGame.dir/src/Dama.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/Dev/Chess/src/Dama.cpp > CMakeFiles/ChessGame.dir/src/Dama.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/repos/Chess/src/Dama.cpp > CMakeFiles/ChessGame.dir/src/Dama.cpp.i
 
 CMakeFiles/ChessGame.dir/src/Dama.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChessGame.dir/src/Dama.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/Dev/Chess/src/Dama.cpp -o CMakeFiles/ChessGame.dir/src/Dama.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/repos/Chess/src/Dama.cpp -o CMakeFiles/ChessGame.dir/src/Dama.cpp.s
 
 CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.o: CMakeFiles/ChessGame.dir/flags.make
-CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.o: /home/yoyosplay/Dev/Chess/src/ListaTransformaciones.cpp
+CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.o: /home/yoyosplay/repos/Chess/src/ListaTransformaciones.cpp
 CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.o: CMakeFiles/ChessGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/Dev/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.o -MF CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.o.d -o CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.o -c /home/yoyosplay/Dev/Chess/src/ListaTransformaciones.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/repos/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.o -MF CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.o.d -o CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.o -c /home/yoyosplay/repos/Chess/src/ListaTransformaciones.cpp
 
 CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/Dev/Chess/src/ListaTransformaciones.cpp > CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/repos/Chess/src/ListaTransformaciones.cpp > CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.i
 
 CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/Dev/Chess/src/ListaTransformaciones.cpp -o CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/repos/Chess/src/ListaTransformaciones.cpp -o CMakeFiles/ChessGame.dir/src/ListaTransformaciones.cpp.s
 
 CMakeFiles/ChessGame.dir/src/Mundo.cpp.o: CMakeFiles/ChessGame.dir/flags.make
-CMakeFiles/ChessGame.dir/src/Mundo.cpp.o: /home/yoyosplay/Dev/Chess/src/Mundo.cpp
+CMakeFiles/ChessGame.dir/src/Mundo.cpp.o: /home/yoyosplay/repos/Chess/src/Mundo.cpp
 CMakeFiles/ChessGame.dir/src/Mundo.cpp.o: CMakeFiles/ChessGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/Dev/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ChessGame.dir/src/Mundo.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Mundo.cpp.o -MF CMakeFiles/ChessGame.dir/src/Mundo.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Mundo.cpp.o -c /home/yoyosplay/Dev/Chess/src/Mundo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/repos/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ChessGame.dir/src/Mundo.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Mundo.cpp.o -MF CMakeFiles/ChessGame.dir/src/Mundo.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Mundo.cpp.o -c /home/yoyosplay/repos/Chess/src/Mundo.cpp
 
 CMakeFiles/ChessGame.dir/src/Mundo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChessGame.dir/src/Mundo.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/Dev/Chess/src/Mundo.cpp > CMakeFiles/ChessGame.dir/src/Mundo.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/repos/Chess/src/Mundo.cpp > CMakeFiles/ChessGame.dir/src/Mundo.cpp.i
 
 CMakeFiles/ChessGame.dir/src/Mundo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChessGame.dir/src/Mundo.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/Dev/Chess/src/Mundo.cpp -o CMakeFiles/ChessGame.dir/src/Mundo.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/repos/Chess/src/Mundo.cpp -o CMakeFiles/ChessGame.dir/src/Mundo.cpp.s
 
 CMakeFiles/ChessGame.dir/src/OpenGL.cpp.o: CMakeFiles/ChessGame.dir/flags.make
-CMakeFiles/ChessGame.dir/src/OpenGL.cpp.o: /home/yoyosplay/Dev/Chess/src/OpenGL.cpp
+CMakeFiles/ChessGame.dir/src/OpenGL.cpp.o: /home/yoyosplay/repos/Chess/src/OpenGL.cpp
 CMakeFiles/ChessGame.dir/src/OpenGL.cpp.o: CMakeFiles/ChessGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/Dev/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ChessGame.dir/src/OpenGL.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/OpenGL.cpp.o -MF CMakeFiles/ChessGame.dir/src/OpenGL.cpp.o.d -o CMakeFiles/ChessGame.dir/src/OpenGL.cpp.o -c /home/yoyosplay/Dev/Chess/src/OpenGL.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/repos/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ChessGame.dir/src/OpenGL.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/OpenGL.cpp.o -MF CMakeFiles/ChessGame.dir/src/OpenGL.cpp.o.d -o CMakeFiles/ChessGame.dir/src/OpenGL.cpp.o -c /home/yoyosplay/repos/Chess/src/OpenGL.cpp
 
 CMakeFiles/ChessGame.dir/src/OpenGL.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChessGame.dir/src/OpenGL.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/Dev/Chess/src/OpenGL.cpp > CMakeFiles/ChessGame.dir/src/OpenGL.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/repos/Chess/src/OpenGL.cpp > CMakeFiles/ChessGame.dir/src/OpenGL.cpp.i
 
 CMakeFiles/ChessGame.dir/src/OpenGL.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChessGame.dir/src/OpenGL.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/Dev/Chess/src/OpenGL.cpp -o CMakeFiles/ChessGame.dir/src/OpenGL.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/repos/Chess/src/OpenGL.cpp -o CMakeFiles/ChessGame.dir/src/OpenGL.cpp.s
 
 CMakeFiles/ChessGame.dir/src/Peon.cpp.o: CMakeFiles/ChessGame.dir/flags.make
-CMakeFiles/ChessGame.dir/src/Peon.cpp.o: /home/yoyosplay/Dev/Chess/src/Peon.cpp
+CMakeFiles/ChessGame.dir/src/Peon.cpp.o: /home/yoyosplay/repos/Chess/src/Peon.cpp
 CMakeFiles/ChessGame.dir/src/Peon.cpp.o: CMakeFiles/ChessGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/Dev/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ChessGame.dir/src/Peon.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Peon.cpp.o -MF CMakeFiles/ChessGame.dir/src/Peon.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Peon.cpp.o -c /home/yoyosplay/Dev/Chess/src/Peon.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/repos/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ChessGame.dir/src/Peon.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Peon.cpp.o -MF CMakeFiles/ChessGame.dir/src/Peon.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Peon.cpp.o -c /home/yoyosplay/repos/Chess/src/Peon.cpp
 
 CMakeFiles/ChessGame.dir/src/Peon.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChessGame.dir/src/Peon.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/Dev/Chess/src/Peon.cpp > CMakeFiles/ChessGame.dir/src/Peon.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/repos/Chess/src/Peon.cpp > CMakeFiles/ChessGame.dir/src/Peon.cpp.i
 
 CMakeFiles/ChessGame.dir/src/Peon.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChessGame.dir/src/Peon.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/Dev/Chess/src/Peon.cpp -o CMakeFiles/ChessGame.dir/src/Peon.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/repos/Chess/src/Peon.cpp -o CMakeFiles/ChessGame.dir/src/Peon.cpp.s
 
 CMakeFiles/ChessGame.dir/src/Pieza.cpp.o: CMakeFiles/ChessGame.dir/flags.make
-CMakeFiles/ChessGame.dir/src/Pieza.cpp.o: /home/yoyosplay/Dev/Chess/src/Pieza.cpp
+CMakeFiles/ChessGame.dir/src/Pieza.cpp.o: /home/yoyosplay/repos/Chess/src/Pieza.cpp
 CMakeFiles/ChessGame.dir/src/Pieza.cpp.o: CMakeFiles/ChessGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/Dev/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ChessGame.dir/src/Pieza.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Pieza.cpp.o -MF CMakeFiles/ChessGame.dir/src/Pieza.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Pieza.cpp.o -c /home/yoyosplay/Dev/Chess/src/Pieza.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/repos/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ChessGame.dir/src/Pieza.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Pieza.cpp.o -MF CMakeFiles/ChessGame.dir/src/Pieza.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Pieza.cpp.o -c /home/yoyosplay/repos/Chess/src/Pieza.cpp
 
 CMakeFiles/ChessGame.dir/src/Pieza.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChessGame.dir/src/Pieza.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/Dev/Chess/src/Pieza.cpp > CMakeFiles/ChessGame.dir/src/Pieza.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/repos/Chess/src/Pieza.cpp > CMakeFiles/ChessGame.dir/src/Pieza.cpp.i
 
 CMakeFiles/ChessGame.dir/src/Pieza.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChessGame.dir/src/Pieza.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/Dev/Chess/src/Pieza.cpp -o CMakeFiles/ChessGame.dir/src/Pieza.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/repos/Chess/src/Pieza.cpp -o CMakeFiles/ChessGame.dir/src/Pieza.cpp.s
 
 CMakeFiles/ChessGame.dir/src/Rey.cpp.o: CMakeFiles/ChessGame.dir/flags.make
-CMakeFiles/ChessGame.dir/src/Rey.cpp.o: /home/yoyosplay/Dev/Chess/src/Rey.cpp
+CMakeFiles/ChessGame.dir/src/Rey.cpp.o: /home/yoyosplay/repos/Chess/src/Rey.cpp
 CMakeFiles/ChessGame.dir/src/Rey.cpp.o: CMakeFiles/ChessGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/Dev/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ChessGame.dir/src/Rey.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Rey.cpp.o -MF CMakeFiles/ChessGame.dir/src/Rey.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Rey.cpp.o -c /home/yoyosplay/Dev/Chess/src/Rey.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/repos/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/ChessGame.dir/src/Rey.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Rey.cpp.o -MF CMakeFiles/ChessGame.dir/src/Rey.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Rey.cpp.o -c /home/yoyosplay/repos/Chess/src/Rey.cpp
 
 CMakeFiles/ChessGame.dir/src/Rey.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChessGame.dir/src/Rey.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/Dev/Chess/src/Rey.cpp > CMakeFiles/ChessGame.dir/src/Rey.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/repos/Chess/src/Rey.cpp > CMakeFiles/ChessGame.dir/src/Rey.cpp.i
 
 CMakeFiles/ChessGame.dir/src/Rey.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChessGame.dir/src/Rey.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/Dev/Chess/src/Rey.cpp -o CMakeFiles/ChessGame.dir/src/Rey.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/repos/Chess/src/Rey.cpp -o CMakeFiles/ChessGame.dir/src/Rey.cpp.s
 
 CMakeFiles/ChessGame.dir/src/Tablero.cpp.o: CMakeFiles/ChessGame.dir/flags.make
-CMakeFiles/ChessGame.dir/src/Tablero.cpp.o: /home/yoyosplay/Dev/Chess/src/Tablero.cpp
+CMakeFiles/ChessGame.dir/src/Tablero.cpp.o: /home/yoyosplay/repos/Chess/src/Tablero.cpp
 CMakeFiles/ChessGame.dir/src/Tablero.cpp.o: CMakeFiles/ChessGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/Dev/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/ChessGame.dir/src/Tablero.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Tablero.cpp.o -MF CMakeFiles/ChessGame.dir/src/Tablero.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Tablero.cpp.o -c /home/yoyosplay/Dev/Chess/src/Tablero.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/repos/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/ChessGame.dir/src/Tablero.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Tablero.cpp.o -MF CMakeFiles/ChessGame.dir/src/Tablero.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Tablero.cpp.o -c /home/yoyosplay/repos/Chess/src/Tablero.cpp
 
 CMakeFiles/ChessGame.dir/src/Tablero.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChessGame.dir/src/Tablero.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/Dev/Chess/src/Tablero.cpp > CMakeFiles/ChessGame.dir/src/Tablero.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/repos/Chess/src/Tablero.cpp > CMakeFiles/ChessGame.dir/src/Tablero.cpp.i
 
 CMakeFiles/ChessGame.dir/src/Tablero.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChessGame.dir/src/Tablero.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/Dev/Chess/src/Tablero.cpp -o CMakeFiles/ChessGame.dir/src/Tablero.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/repos/Chess/src/Tablero.cpp -o CMakeFiles/ChessGame.dir/src/Tablero.cpp.s
 
 CMakeFiles/ChessGame.dir/src/Torre.cpp.o: CMakeFiles/ChessGame.dir/flags.make
-CMakeFiles/ChessGame.dir/src/Torre.cpp.o: /home/yoyosplay/Dev/Chess/src/Torre.cpp
+CMakeFiles/ChessGame.dir/src/Torre.cpp.o: /home/yoyosplay/repos/Chess/src/Torre.cpp
 CMakeFiles/ChessGame.dir/src/Torre.cpp.o: CMakeFiles/ChessGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/Dev/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/ChessGame.dir/src/Torre.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Torre.cpp.o -MF CMakeFiles/ChessGame.dir/src/Torre.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Torre.cpp.o -c /home/yoyosplay/Dev/Chess/src/Torre.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/repos/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/ChessGame.dir/src/Torre.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Torre.cpp.o -MF CMakeFiles/ChessGame.dir/src/Torre.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Torre.cpp.o -c /home/yoyosplay/repos/Chess/src/Torre.cpp
 
 CMakeFiles/ChessGame.dir/src/Torre.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChessGame.dir/src/Torre.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/Dev/Chess/src/Torre.cpp > CMakeFiles/ChessGame.dir/src/Torre.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/repos/Chess/src/Torre.cpp > CMakeFiles/ChessGame.dir/src/Torre.cpp.i
 
 CMakeFiles/ChessGame.dir/src/Torre.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChessGame.dir/src/Torre.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/Dev/Chess/src/Torre.cpp -o CMakeFiles/ChessGame.dir/src/Torre.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/repos/Chess/src/Torre.cpp -o CMakeFiles/ChessGame.dir/src/Torre.cpp.s
 
 CMakeFiles/ChessGame.dir/src/Vector.cpp.o: CMakeFiles/ChessGame.dir/flags.make
-CMakeFiles/ChessGame.dir/src/Vector.cpp.o: /home/yoyosplay/Dev/Chess/src/Vector.cpp
+CMakeFiles/ChessGame.dir/src/Vector.cpp.o: /home/yoyosplay/repos/Chess/src/Vector.cpp
 CMakeFiles/ChessGame.dir/src/Vector.cpp.o: CMakeFiles/ChessGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/Dev/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/ChessGame.dir/src/Vector.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Vector.cpp.o -MF CMakeFiles/ChessGame.dir/src/Vector.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Vector.cpp.o -c /home/yoyosplay/Dev/Chess/src/Vector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yoyosplay/repos/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/ChessGame.dir/src/Vector.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessGame.dir/src/Vector.cpp.o -MF CMakeFiles/ChessGame.dir/src/Vector.cpp.o.d -o CMakeFiles/ChessGame.dir/src/Vector.cpp.o -c /home/yoyosplay/repos/Chess/src/Vector.cpp
 
 CMakeFiles/ChessGame.dir/src/Vector.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChessGame.dir/src/Vector.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/Dev/Chess/src/Vector.cpp > CMakeFiles/ChessGame.dir/src/Vector.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yoyosplay/repos/Chess/src/Vector.cpp > CMakeFiles/ChessGame.dir/src/Vector.cpp.i
 
 CMakeFiles/ChessGame.dir/src/Vector.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChessGame.dir/src/Vector.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/Dev/Chess/src/Vector.cpp -o CMakeFiles/ChessGame.dir/src/Vector.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yoyosplay/repos/Chess/src/Vector.cpp -o CMakeFiles/ChessGame.dir/src/Vector.cpp.s
 
 # Object files for target ChessGame
 ChessGame_OBJECTS = \
+"CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.o" \
 "CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.o" \
 "CMakeFiles/ChessGame.dir/src/Alfil.cpp.o" \
 "CMakeFiles/ChessGame.dir/src/Caballo.cpp.o" \
@@ -285,6 +300,7 @@ ChessGame_OBJECTS = \
 # External object files for target ChessGame
 ChessGame_EXTERNAL_OBJECTS =
 
+ChessGame: CMakeFiles/ChessGame.dir/lib/ETSIDI.cpp.o
 ChessGame: CMakeFiles/ChessGame.dir/src/Ajedrez.cpp.o
 ChessGame: CMakeFiles/ChessGame.dir/src/Alfil.cpp.o
 ChessGame: CMakeFiles/ChessGame.dir/src/Caballo.cpp.o
@@ -300,8 +316,13 @@ ChessGame: CMakeFiles/ChessGame.dir/src/Tablero.cpp.o
 ChessGame: CMakeFiles/ChessGame.dir/src/Torre.cpp.o
 ChessGame: CMakeFiles/ChessGame.dir/src/Vector.cpp.o
 ChessGame: CMakeFiles/ChessGame.dir/build.make
+ChessGame: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+ChessGame: /usr/lib/x86_64-linux-gnu/libGLX.so
+ChessGame: /usr/lib/x86_64-linux-gnu/libGLU.so
+ChessGame: /usr/lib/x86_64-linux-gnu/libfreetype.so
+ChessGame: /usr/lib/x86_64-linux-gnu/libglut.so.3.12.0
 ChessGame: CMakeFiles/ChessGame.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yoyosplay/Dev/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable ChessGame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yoyosplay/repos/Chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable ChessGame"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ChessGame.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -313,6 +334,6 @@ CMakeFiles/ChessGame.dir/clean:
 .PHONY : CMakeFiles/ChessGame.dir/clean
 
 CMakeFiles/ChessGame.dir/depend:
-	cd /home/yoyosplay/Dev/Chess/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yoyosplay/Dev/Chess /home/yoyosplay/Dev/Chess /home/yoyosplay/Dev/Chess/build /home/yoyosplay/Dev/Chess/build /home/yoyosplay/Dev/Chess/build/CMakeFiles/ChessGame.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/yoyosplay/repos/Chess/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yoyosplay/repos/Chess /home/yoyosplay/repos/Chess /home/yoyosplay/repos/Chess/build /home/yoyosplay/repos/Chess/build /home/yoyosplay/repos/Chess/build/CMakeFiles/ChessGame.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/ChessGame.dir/depend
 

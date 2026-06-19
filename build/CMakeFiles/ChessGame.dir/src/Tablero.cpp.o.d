@@ -1,7 +1,7 @@
 CMakeFiles/ChessGame.dir/src/Tablero.cpp.o: \
- /home/yoyosplay/Dev/Chess/src/Tablero.cpp /usr/include/stdc-predef.h \
- /home/yoyosplay/Dev/Chess/src/Tablero.h \
- /home/yoyosplay/Dev/Chess/lib/glut.h /usr/include/GL/gl.h \
+ /home/yoyosplay/repos/Chess/src/Tablero.cpp /usr/include/stdc-predef.h \
+ /home/yoyosplay/repos/Chess/src/Tablero.h \
+ /home/yoyosplay/repos/Chess/lib/glut.h /usr/include/GL/gl.h \
  /usr/include/GL/glext.h /usr/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -19,8 +19,8 @@ CMakeFiles/ChessGame.dir/src/Tablero.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h /usr/include/GL/glu.h \
- /home/yoyosplay/Dev/Chess/src/Pieza.h /usr/include/string.h \
+ /home/yoyosplay/repos/Chess/src/Pieza.h /usr/include/string.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/strings.h /home/yoyosplay/Dev/Chess/src/Vector.h
+ /usr/include/strings.h /home/yoyosplay/repos/Chess/src/Vector.h

@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_COLOR_MATERIAL);
 	glMatrixMode(GL_PROJECTION);
-	gluPerspective(40.0, 800 / 600.0f, 0.1, 150);
+	gluPerspective(40.0, 1400.0 / 1000.0f, 0.1, 150);
 
 	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25, OnTimer, 0);
